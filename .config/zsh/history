@@ -11262,3 +11262,107 @@ l
 la
 lt -a
 stow .
+cd .config/Code/User
+ls
+ls
+cd .config/alacritty
+ls
+.
+..
+cd xournalpp
+la
+ls
+ls
+ls
+cd dotfiles
+ls
+git init .
+la
+git add *
+git add ./*
+ls
+bash
+ls
+la
+v .vimrc
+mv ~/scripts .
+ls
+la
+cd scripts
+la
+..
+lt
+lt -a
+ls
+v README.md
+ls
+la
+ls
+v README.md
+cd 
+ls
+cd dotfiles
+ls
+l
+mkdir CompetitiveProgramming/Library
+mkdir -p CompetitiveProgramming/Library
+ls
+cd CompetitiveProgramming
+ls
+cd Library
+..
+rmdir Library
+mv ~/CompetitiveProgramming/Library .
+ls
+cd Library
+la
+..
+..
+ls
+ls
+ls
+stow .
+ls
+ls ../ComptitiveProgramming
+ls ../CompetitiveProgramming
+l
+la
+ls
+cd .config
+ls
+mkdir -p Code/User
+mv ~/.config/Code/User/keybindings.json ./Code/User
+mv ~/.config/Code/User/settings.json ./Code/User
+ls
+mkdir xournalpp
+mv ~/.config/xournalpp/toolbar.ini xournalpp
+..
+stow .
+ls
+mkdir Pictures
+ls
+rmdir Pictures
+ls
+cd dotfiles
+ls
+v README.md
+code README.md
+cd dotfiles
+git status
+cd .config/Code/User
+ls
+cat settings.json
+yay --files
+yay --show
+yay --query
+fastfetch
+pacman -Ss chrome
+pacman -Ss google
+pacman -Ss google-chrome
+pacman -Ss google
+cd
+v /etc/lightdm/lightdm-gtk-greeter.conf
+v /etc/lightdm/lightdm-gtk-greeter.conf
+v /etc/lightdm/lightdm-gtk-greeter.conf
+cd dotfiles
+code .

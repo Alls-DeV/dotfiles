@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+RED='\033[0;31m'
+BLUE='\033[0;36m'
+NC='\033[0m' # no color
+
+function ProgressBar {
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+    printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%%"
+}
+
+function show_help {
+    echo "Usage: cp_validate solution validator generator num_tests"
+    echo ""
+    echo "solution, validator and generator are respectively names of the c++ files. Validator should return the string 'OK' or the string that explains the error. Validator first take in input the generator input and next the program output"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help  Show this help message and exit."
+}
+
+# Check for help option
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    show_help
+    exit 0
+fi
+
+# Check for correct number of arguments
+if [ "$#" -ne 4 ]; then
+    echo -e "${RED}Error: Incorrect number of parameters.${NC}"
+    show_help
+    exit 1
+fi
+
+rm $1 $2 $3 2> /dev/null
+g++ -Ofast -std=c++20 $1.cpp -o $1
+g++ -Ofast -std=c++20 $2.cpp -o $2
+g++ -Ofast -std=c++20 $3.cpp -o $3
+if [ ! -f $1 ] || [ ! -f $2 ] || [ ! -f $3 ]; then
+    exit 0
+fi
+for ((testNum=0;testNum<$4;testNum++))
+do
+    ProgressBar ${testNum} ${4}
+    ./$3 > input
+    ./$1 < input > out
+    cat input out > data
+    ./$2 < data > res
+    result=$(cat res)
+    if [ "${result:0:2}" != "OK" ];
+    then
+        echo ""
+        echo -e "${RED}Error found!${NC}"
+        echo -e "${BLUE}Input:${NC}"
+        cat input
+        echo -e "${BLUE}Output:${NC}"
+        cat out
+        echo -e "${BLUE}Validator result:${NC}"
+        cat res 
+        rm $1 $2 $3 out res data
+        exit 0
+    fi
+done
+echo ""
+echo -e "${BLUE}Passed $4 tests!!!${NC}"
+rm $1 $2 $3 out res data
+exit 0
