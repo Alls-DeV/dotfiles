@@ -97,3 +97,9 @@ Here are some recommended browser extensions for enhancing your browsing experie
 ## System, Icon, and Cursor Theme
 - [Everforest GTK Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme)
 - [Phinger Cursors](https://github.com/phisch/phinger-cursors)
+
+## Enable 'Open in Terminal' in the file explorer
+```bash
+gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
+gsettings set org.cinnamon.desktop.default-applications.terminal exec 'alacritty'
+```

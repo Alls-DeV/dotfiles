@@ -11366,3 +11366,22 @@ v /etc/lightdm/lightdm-gtk-greeter.conf
 v /etc/lightdm/lightdm-gtk-greeter.conf
 cd dotfiles
 code .
+ls
+cd dotfiles
+stow .
+..
+ls
+cd CompetitiveProgramming
+ls
+v /etc/lightdm/lightdm-gtk-greeter.conf
+v .zshenv
+source ~/.config/zsh/.zshrc
+v .xsession-errors
+v .xsession-errors
+v .xsession-errors.old
+cd /usr/share/applications
+l
+v vim.desktop
+gtk-launch /usr/share/applications/vim.desktop
+sudo gtk-launch /usr/share/applications/vim.desktop
+v .config/i3/config
