@@ -4,13 +4,13 @@
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S install i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman gvim cronie dunst eza man-db git fastfetch dmenu stow
+sudo pacman -S install i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow
 ```
 
 ## Systemctl Privileges
 
 ```bash
-sudo vim /etc/sudoers.d/sysctl
+sudo nvim /etc/sudoers.d/sysctl
 alls ALL = NOPASSWD: /bin/systemctl
 ```
 
