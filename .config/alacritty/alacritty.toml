@@ -1,23 +1,8 @@
-import = ["/home/alls/.config/alacritty/everforest.toml",]
+import = ["/Users/allsdev/.config/alacritty/gruvbox_light.toml"]
 
 [font]
-size = 8.5
-
-[font.bold]
-family = "JetBrainsMono NF"
-style = "Bold"
-
-[font.bold_italic]
-family = "JetBrainsMono NF"
-style = "Bold Italic"
-
-[font.italic]
-family = "JetBrainsMono NF"
-style = "Medium Italic"
-
-[font.normal]
-family = "JetBrainsMono NF"
-style = "Medium"
+normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }
+size = 17.5
 
 [window]
 padding = { x = 0, y = 0 }
@@ -26,3 +11,9 @@ dynamic_padding = true
 [colors]
 cursor = {cursor = "0xd3c6aa", text = "0x232a2e"}
 vi_mode_cursor = {cursor = "0xd3c6aa", text = "0x232a2e"}
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
