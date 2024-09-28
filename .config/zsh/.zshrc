@@ -1,7 +1,3 @@
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=$HOME/.config/zsh/history
-
 bindkey -e
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
@@ -16,7 +12,22 @@ PS1="%B%{$fg[red]%}%n%{$fg[white]%}@%{$fg[yellow]%}%M %{$fg[magenta]%}%~"$'\n'"%
 
 source /home/alls/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/alls/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 bindkey '^f' autosuggest-accept
+
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+HISTFILE=$HOME/.config/zsh/history
+HISTDUP=erase
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 alias ls='eza --icons'
 alias l='ls -l'
