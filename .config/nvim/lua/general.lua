@@ -14,4 +14,3 @@ vim.opt.hlsearch = true
 vim.opt.swapfile = false
 vim.opt.scrolloff = 8
 vim.opt.showmode = false
-vim.cmd("language en_US")

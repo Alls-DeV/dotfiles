@@ -86,7 +86,7 @@ Install VSCode and Chrome using yay:
 - [Chrome](https://aur.archlinux.org/packages/google-chrome)
 
 ## Browser Extensions
-Here are some recommended browser extensions for enhancing your browsing experience:
+Browser extensions:
 
 - [Adblock Plus](https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb)
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
@@ -103,3 +103,6 @@ Here are some recommended browser extensions for enhancing your browsing experie
 gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
 gsettings set org.cinnamon.desktop.default-applications.terminal exec 'alacritty'
 ```
+
+## Huion tablet
+- [arch wiki](https://wiki.archlinux.org/title/Graphics_tablet#Installation)

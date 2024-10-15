@@ -248,7 +248,6 @@ rm -r plugin
 cd Github/neovim
 git fetch
 v runtime/nvim.desktop
-git show
 git --version
 mkdir lua
 nvim plugins.lua
@@ -277,7 +276,6 @@ mv ~/Desktop/monokai.lua ./lua/plugins
 nvim lsp-config.lua
 mv lsp-config.lua lsp.lua
 v CompetitiveProgramming/cf1914/G2.cpp 
-rm init.lua
 mv -r nvim/. .
 mv -r nvim/* .
 mv -r ./nvim/* .
@@ -456,16 +454,12 @@ g++ grader.cpp foto.cpp -DALE -o a && ./a
 cpa r a < dio
 rm a.c cars.cpp
 cd CompetitiveProgramming/CC
-cd A
-cd B
 cat > b.in0
 cat > b.in1
 cat > b.ans1
 cat > b.ans0
 mkdir CC
 cd CC
-mkdir A B C D
-cd C
 touch a.in0 a.in1 a.in2
 touch a.out0 a.out1 a.out2
 python3 a.py < dio
@@ -512,7 +506,6 @@ rm -r CC
 cpa parse
 cd cf1928
 v A.cpp
-./batwarn.sh
  /home/alls/scripts/batwarn.sh
 cpa r C
 cpa r C -D
@@ -613,12 +606,10 @@ rm input.txt output.txt
 47
 tree
 v .
-v treesitter.lua
 builtin cd -- .cache/nvim/
 bat options.lua
 bat plugins.lua
 bat lazy-lock.json
-bat init.lua
 v theme.lua
 rm theme.lua
 v plugins
@@ -843,7 +834,6 @@ asd a.cpp && ./a < dio
 cp 01__20-02-2024.xopp 01__20-02-2024.xopp
 cp 01__20-02-2024.xopp 02__22-02-2024.xopp
 dasd a.cpp && ./a < dio
-dasd b.cpp && ./a < in
 asd b.cpp
 sudo apt install ./opera-stable_108.0.5067.24_amd64.deb.crdownload
 sudo apt install ./opera-stable_108.0.5067.24_amd64.deb
@@ -856,7 +846,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup override set stable\
 rustup update stable
 cargo install alacritty
-alacritty &
 whereis alacritty
 cp /home/alls/.cargo/bin/alacritty /bin/
 sudo cp /home/alls/.cargo/bin/alacritty /bin/
@@ -888,8 +877,6 @@ pushd CompetitiveProgramming
 popd
 v ~/.config/alacritty/alacritty.toml 
 v .config/nvim/lua/plugins/gruvbox.lua
-v init.lua
-v lualine.lua
 v a.cpp b.cpp in
 v .config/alacritty/alacritty.toml 
 builtin cd -- .config/alacritty/
@@ -971,7 +958,6 @@ rm opera-stable_108.0.5067.24_amd64.deb
 evince isee.pdf
 rm isee.pdf
 evince ricevuta.pdf
-rm brute.cpp gen.cpp
 asd -DALE a.cpp && ./a < in0
 ddasd a.cpp && ./a < in1
 cp in1 wa
@@ -1126,7 +1112,6 @@ v ../Library/cp_validate
             sudo apt install python3.11-venv\
 
 git show 5073db2256d065193b7a10340c410762f947f19d
-cd CompetitiveProgramming/
 v ../../update.sh
 ../../
 cp * ~/CompetitiveProgramming/Library/ CompetitiveProgramming/Library
@@ -1267,8 +1252,6 @@ cp -r nvim ciao
 rm -r lua
 mv ciao nvim
 2
-cd nvim
-cd lua
 v options.lua
 ddasd generate_graph.cpp && ./a
 asd generate_graph.cpp && ./a
@@ -1288,7 +1271,6 @@ v CompetitiveProgramming/Library/cp_setup
 cd .config/vim/
 mv .vimrc ../../
 vim a.cpp gen.cpp
-cd .config/nvim
 v lua/options.lua
 v a.cpp in0
 vim ~/.vimrc
@@ -1413,7 +1395,6 @@ v result.txt
 rm result.txt
 v filekey.key
 rm filekey.key
-python3
 python3 crypto.py
 dasd a.cpp && ./a < i
 v ~/scripts/clone
@@ -1447,7 +1428,6 @@ ddasd a.cpp
 7
 0 0 0 0 1 2 4
 0 1 3 2 2 1 0 3
-dasd a.cpp && ./a < 
 4
 4 3 1 2
 6
@@ -1487,7 +1467,6 @@ mv a.cpp tmp
 rm a.c
 mv a.cpp ../.
 ls ../
-rm b.cpp
 vim a.cpp
 #ifdef ALE
 	#include "/home/alls/CompetitiveProgramming/Library/debug.h"
@@ -1540,7 +1519,6 @@ asd solution.cpp && ./a
 cpc solution.cpp
 5 5 4 5 2
 dasd brute.cpp && ./a 
-1
 1 1145 14
 0000010001110011
 0000010001111001
@@ -1554,13 +1532,11 @@ asd genn.cpp && ./a
 cp_compare a brute genn 100
 cp_compare a brute genn 1000
 rm genn.cpp
-rm input
 cat in
 asd vis.cpp && ./a < in
 asd vis.cpp && ./a
 		if (ans == -1 || ans > dp[i][m - 1] + i + 1) ans = dp[i][m - 1] + i + 1;
 cp_compare a brute gen 10000
-cp_compare a brute gen 100
 3 3
 5 3
 0 0 0
@@ -1670,7 +1646,6 @@ git clone https://aur.archlinux.org/yay-bin.git\
 cd yay-bin\
 makepkg -si
 sudo makepkg -si
-makepkg -si
 yay -S google-chrome
 sudo pacman -S htop
 sudo pacman -S bluetooth-ctl
@@ -1742,7 +1717,6 @@ v .config/zsh/.zshrc
 vim .config/zsh/.zshrc
 cd ~/.config
 rmdir dunst
-cd ..
 systemd
 cd user
 ;
@@ -1805,7 +1779,6 @@ cd Everforest-GTK-Theme
 ./install.sh
 vim .config/i3/config
 mv Github/debian-install/CompetitiveProgramming .
-mkdir tmp
 cp ../Library/Template.cpp a.cpp
 v custom_hash.cpp
 v segment_tree.cpp
@@ -1865,9 +1838,7 @@ rm unionfind.cpp
 v generate_graph.cpp
 v Template.cpp
 touch in
-v ~/.config/alacritty/alacritty.toml
 v ~/.config/alacritty/everforest.toml
-dasd a.cpp && ./a 
 dmenu
 dmenu_run
 man dmenu
@@ -1934,7 +1905,6 @@ bat everforest.tmTheme
 cat ~/.config/i3/config
 cat ~/.config/zsh/.zshrc
 bat everforest.tmTheme --theme=everforest
-cd Desktop
 cat ~/.config/alacritty/everforest.toml
 cd .config/bat/themes
 rm everforest.tmTheme
@@ -1954,11 +1924,9 @@ asd a.cpp
 clone 
 reset && asd a.cpp && ./a < in
 sudo v lightdm.conf
-v ~/.config/i3/config
 v .config/i3/i3status.conf
 dm-tool --help
 dm-tool lock
-aa
 aaaaaaa
 sudo pacman -S lightdm-gtk-greeter-settings
 cd /etc/lightdm
@@ -2040,8 +2008,6 @@ git add *
 git add ./*
 bash
 mv ~/scripts .
-cd scripts
-lt
 lt -a
 cd 
 mkdir CompetitiveProgramming/Library
@@ -2057,7 +2023,6 @@ mkdir xournalpp
 mv ~/.config/xournalpp/toolbar.ini xournalpp
 mkdir Pictures
 rmdir Pictures
-v README.md
 code README.md
 cd .config/Code/User
 cat settings.json
@@ -2088,8 +2053,6 @@ gsettings list-schemas | grep file
 gsettings list-schemas
 gsettings list-recursively org.gnome.desktop.default-applications.terminal
 gsettings list-recursively org.cinnamon.desktop.default-applications.terminal
-code a.cpp
-asd a.cpp && ./a
 code out
 asd a.cpp && ./a > out
 17 13 9 9 7 3
@@ -2101,13 +2064,11 @@ gsettings set org.gnome.Evince.Default fullscreen false
 cd .config/zsh
 v completion.zsh
 bat .zcompdump
-cd plugins
 cd zsh-syntax-highlighting
 cd zsh-autosuggestions
 v .zshrc
 v .config/alacritty/alacritty.toml
 v .config/alacritty/everforest.toml
-sudo yay
 v /etc/pacman.conf
 sudo v /etc/pacman.conf
 sudo vim /etc/pacman.conf
@@ -2115,14 +2076,11 @@ mv IMG_20240708_150918_818.jpg IMG_20240708_150918_818.jpeg
 mv IMG_20240708_150918_818.jpeg IMG_20240708_150918_818.jpg
 v i
 cd .config
-stow .
 cd code
 la
-cd Library
 v CompetitiveProgramming/tmp/in
 cd CI
 rm todo
-yay
 sudo pacman -Ss writer
 pacman -Ss office
 pacman -Ss libreoffice-still
@@ -2145,11 +2103,8 @@ sudo pacman -S obs-studio
 v .vimrc
 cd ~/scripts
 chmod a+x *
-cd CompetitiveProgramming/Library
 chmod a+x cp_validate cp_compare
 v 
-cd CompetitiveProgramming
-cd tmp
 v input
 CompetitiveProgramming/tmp
 v in
@@ -2157,11 +2112,8 @@ ddasd a.cpp && ./a
 v gen.cpp
 asd a.cpp && ./a < input
 dasd a.cpp && ./a < input
-asd a.cpp && ./a 
 v ~/Downloads/Telegram\ Desktop/dieta.py
 cd Downloads/Telegram\ Desktop
-pwd
-reset
 sudo pacman -S python3-pandas
 sudo pip install pandas
 sudo pacman -S python-pandas
@@ -2169,20 +2121,13 @@ sudo pacman -S python-tqdm
 sudo pacman -S python-openpyxl
 python3 dieta.py
 ~dasd a.cpp && ./a < in
-clone
-rm *
-cp ../Library/Template.cpp a.cpp && cp ../Library/gen.cpp gen.cpp && touch in && v a.cpp in
 ls ~/.config/nvim
 ls ~/.config/
 mkdir ~/.config/nvim
 v ~/.config/nvim/init.lula
 mv ~/.config/nvim/init.lula ~/.config/nvim/init.lua
-v a.cpp in
 dasd a.cpp && ./a
-asd a.cpp && ./a < in
 ddasd a.cpp && ./a < in
-dasd a.cpp && ./a < in
-cpc a.cpp
 ddasd a.cpp && ./a
 cp_compare a sol gen 1000
 sudo pacman -S neovim
@@ -2191,54 +2136,515 @@ nvim a.cpp
 v ~/.vimrc
 nvim ~/.config/nvim/init.lua
 source ~/.config/zsh/.zshrc
-v ~/.config/zsh/.zshrc
 v ~/.config/nvim/init.lua
 pacman -S gnvim
 pacman -Ss gnvim
 pacman -Ss gvim
 pacman -Ss gneovim
 pacman -Ss neovim
-v ~/.zshenv
-fastfetch
 code tmp
 python3 tmp
 rm tmp
 mv a.cpp a.py
 v a.py
 python3 a.py
-cd
 unzip Exams2017.zip
 mv a.py a.cpp
 cat input
-cd CompetitiveProgramming/tmp
-v a.cpp
 cp_compare a ans gen 1000
-cd Downloads
 unzip 2024\ Projects\ shared.zip
 mkdir MDP
 mv *.docx MDP
 mv Pilato\ -\ AMBRA_slides_v2.pdf Colonnello-Promoest\ -\ Promoest\ Digital\ Trade.pdf MDP
 MDP
 v stocazzo
-pacman -Syu
-sudo pacman -Syu
-reboot
-v
 rm stocazzo 
-cd Github
-cd dotfiles
 git pull
 v .zshenv
-cd .config/alacritty
-v alacritty.toml
-..
-ls
 git diff .config/zsh/.zshrc
-git status
 git status CompetitiveProgramming
 git status CompetitiveProgramming/Library/cp_validate
 git diff CompetitiveProgramming/
 git diff CompetitiveProgramming/Library/cp_compare
-code .
 disown
+v ~/.zshenv
+git stow
+stow --help
+rm init.lua
+stow .
+v lazy-lock.json
+v general.lua
+pacman -Syu
+google-chrome
+google-chrome-stable --version
+pacman -Ss google-chrome-stable
+sudo yay
+sudo pacman -Rns yay-bin yay-bin-debug
+sudo pacman -S --needed git base-devel\
+
+git clone https://aur.archlinux.org/yay.git\
+
+cd yay
+makepkg -si
+yay --Syu
+yay --Sy
+yay --help
+yay --Su
+yay -Su
+v init.lua
+v ~/dotfiles/.config/nvim/init.lua
+cat general.lua
+bat general.lua
+bat remaps.lua
+cd config
+v lazy.lua
+v gruvbox.lua
+mv gruvbox.lua colorscheme.lua
+pwd
+/home/alls/dotconfig/.config/nvim/lua/plugins/
+cd /home/alls/dotfiles/.config/nvim/lua/plugins
+v ../config/lazy.lua
+cd CompetitiveProgramming/
+v ~/.config/nvim/lua/config/lazy.lua
+trdry
+mkdir meta
+7z 
+sudo pacman -Syu
+unzip contestData.zip
+yay
+yay -S p7zip
+7z --help
+7z e contestData.zip
+v statement.txt
+rm *
+mkdir A B C D
+cp ../Library/Template.cpp A/a.cpp
+cp ../Library/Template.cpp B/a.cpp
+cp ../Library/Template.cpp C/a.cpp
+rmdir D
+cp A D
+cp -r A E
+E
+rm -r B C E
+cp ../Library/gen.cpp A/gen.cpp
+cp a.cpp brute.cpp
+cp_compare a brute gen 100
+cd meta
+rm input
+mv in validation_in
+asd a.cpp && ./a < validation_in > validation_out
+rm brute.cpp gen.cpp
+7z e input.zip
+asd a.cpp && ./a < subsonic_subway_input.txt > final_out
+mv ~/Downloads/Telegram\ Desktop/subsonic_subway_input.txt danny_input
+asd a.cpp && ./a < danny_input > mio_output
+code danny_output
+diff danny_output mio_output
+cp -r A B
+cd B
+rm danny_output danny_input final_out input.zip mio_output subsonic_subway_input.txt validation_out validation_in
+cd CompetitiveProgramming/meta/B
+asd a.cpp && ./a 
+asd a.cpp && ./a < prime_subtractorization_validation_input.txt > validation_out
+7z e prime_subtractorization_input.zip
+asd a.cpp && ./a < prime_subtractorization_input.txt > final_out
+mkdir C
+cd C
+cp ../A/a.cpp .
+cd CompetitiveProgramming/meta/A
+rm danny_output danny_input final_out mio_output subsonic_subway_input.txt validation_out validation_in
+v danny.cpp
+rm danny.cpp
+ls ~/Downloads/Telegram\ Desktop/
+l ~/Downloads/Telegram\ Desktop/
+mv ~/Downloads/Telegram\ Desktop/subsonic_subway_input.txt input
+asd diocane.cpp && ./a < input > alls.out
+asd a.cpp && ./a < input > alls.out
+asd diocane.cpp && ./a < input > danny.out
+diff alls.out danny.out
+cd ../C
+code a.cpp
+asd a.cpp && ./a
+code in
+asd a.cpp && ./a < in
+cd A
+code substantial_losses_tommaso_dossi_dox_source_code.cpp
+code substantial_losses_valerio_stancanelli_thescrasse_source_code.cpp
+yay opentabletdriver
+sudo rmmod wacom hid_generic
+sudo rmmod wacom hid_uclogic
+sudo mkinitcpio -P
+yay --remove opentabletdriver
+yay -S
+yay -U
+yay -Syu
+cd ..
+cd .config/pulse
+	libwacom-show-stylus
+yay -S huiontablet
+ls /proc/bus/input/devices/
+ls /proc/bus/input/devices
+RESET
+cat /proc/bus/input/devices
+yay -S usbutils
+yay -S xf86-input-wacom
+yay -S dpkg
+cd Downloads
+rm IMG_20240708_150918_818.jpeg
+rm -r MDP
+rm 2024\ Projects\ shared.zip
+rm DE\ VITO_Amazon\ Spain\ Services,\ S.l_pf_f_pb.pdf.p7m
+unzip HuionTablet_LinuxDriver_v15.0.0.162.x86_64.tar.xz
+unxz HuionTablet_LinuxDriver_v15.0.0.162.x86_64.tar.xz
+rm HuionTablet_LinuxDriver_v15.0.0.162.x86_64.tar
+aa
+aaa
+aaaaa
+tar xf HuionTablet_LinuxDriver_v15.0.0.162.x86_64.tar.xz
+mv DriverInstallation.pdf install.sh uninstall.sh huion tmp
+./uninstall.sh
+sudo ./uninstall.sh
+eog DriverInstallation.pdf
+awk Dr
+cd huion
+lt
+cd Downloads/tmp
+sudo ./install.sh
+yay huiontablet
+cut -d: -f1 /etc/passwd
+sudo chown -R alls /usr/lib/huiontablet/*
+sudo huiontablet
+reboot
+libwacom-list-devices
+libwacom-update-db
+sudo libwacom-update-db
+libwacom-list-local-devices
+sudo libwacom-list-local-devices
+xsetwacom --list devices
+sudo dmesg
+v /usr/share/X11/xorg.conf.d/70-wacom.conf
+lsusb
+xsetwacom
+sudo nvim /etc/X11/xorg.conf.d/10-table.conf
+xsetwacom list devices
+huiontablet
+git add lua/plugins/colorscheme.lua
+bat lua/plugins/colorscheme.lua
+v lua/plugins/colorscheme.lua
+rm -r meta
+mkdir tmp
+cp ../Library/Template.cpp a.cpp && cp ../Library/gen.cpp gen.cpp && touch in && v a.cpp in
+dasd a.cpp && ./a < 
+1
+python3
+cp a.cpp b.cpp
+dasd b.cpp && ./a 
+dasd b.cpp && ./a < in
+cpc b.cpp
+rm b.cpp
+dasd a.cpp && ./a < in
+dasd a.cpp && ./a 
+cpc a.cpp
+v a.cpp
+v ~/.config/nvim/lua/plugins/colorscheme.lua
+bat init.lua
+v config/lazy.lua
+v plugins/colorscheme.lua
+cd Github
+cd .dotnet
+cd .config/i3
+v config
+gf
+fg
+v README.md
+cd Desktop
+mkdir jumpi
+mv test.jpg jumpi
+cd jumpi
+code .
+cd Desktop/jumpi
+unzip ch8_training_images_8.zip
+cd tmp
+v ~/.config/nvim/lua/plugins/gitsigns.lua
+v ~/.config/i3/config
+clone
+v a.cpp in
+cd .config/nvim
+reset
+alacritty
+cd scripts
+rm clone
+./monitor.sh
+./batwarn.sh
+cd dotfiles
+cd .config/alacritty
+v ~/.config/alacritty/alacritty.toml
+cd ~/.config/alacritty/
+cp gruvbox_light.toml hyper.toml
+ls
+v hyper.toml
+v alacritty.toml
+fastfetch
+..
+cd nvim
+cd lua
+cd plugins
+ls --help
+ls --git
+l --git
+v ~/.config/zsh/.zshrc
+cd .config/nvim/lua/plugins
+git show gitsigns.lua
+git show
+git show nvim-tree.lua
+git diff gitsigns.lua
+git statu
+git restore --staged gitsigns.lua
+git add gitsigns.lua
+cd CompetitiveProgramming
+cd Library
+cd CompetitiveProgramming/Library
+git statu .
+v cp)cp_compare
+v cp_compare phi.cpp
+v gitsigns.lua
+v cp_compare
+git status .
+git restore --staged cp_compare
+git diff cp_compare
+git status
 l
+v colorscheme.lua
+v treesitter.lua
+v
+v lualine.lua
+v ../../../../.zshenv
+cd
+cd CompetitiveProgramming/tmp
+alacritty &
+exit
+: 1728767711:0;(alacritty &) && disown
+: 1728767718:0;alacritty &
+: 1728767723:0;cd CompetitiveProgramming/tmp
+: 1728767728:0;(alacritty &) && disown
+: 1728767733:0;fg
+: 1728811584:0;cd CompetitiveProgramming
+: 1728811587:0;cd tmp
+: 1728811588:0;l
+: 1728811590:0;v a.cpp
+: 1728826376:0;cd CompetitiveProgramming/tmp
+: 1728826377:0;l
+: 1728826379:0;v a.cpp
+: 1728826405:0;l
+: 1728826606:0;../Library
+: 1728826607:0;l
+: 1728826610:0;v cp_compare
+: 1728827460:0;v ~/.config/nvim/lua/plugins/gitsigns.lua
+: 1728827558:0;l
+: 1728827563:0;v cp_compare
+: 1728827603:0;v ~/.config/nvim/lua/plugins/lualine.lua
+: 1728827761:0;v ~/dotfiles/.config/nvim/lua/plugins/lualine.lua
+: 1728834052:0;cd CompetitiveProgramming/tmp
+: 1728834056:0;(alacritty &) && disown
+: 1728834060:0;v a.cpp in
+: 1728837109:0;dasd a.cpp && ./a < in
+: 1728860359:0;cpc a.cpp
+: 1728860567:0;asd gen.cpp && ./a 
+: 1728861629:0;../Library
+: 1728861632:0;l
+: 1728861637:0;v generate_graph.cpp
+: 1728919878:0;v
+: 1728920364:0;rm a.py
+: 1728925392:0;cd Downloads/Telegram\ Desktop
+: 1728925392:0;l
+: 1728925396:0;..
+: 1728925396:0;l
+: 1728925452:0;v totale_treni.py
+: 1728925499:0;python3 totale_treni.py
+: 1728925524:0;v totale_treni.py
+: 1728925571:0;cd Downloads/Telegram\ Desktop
+: 1728925574:0;python3 totale_treni.py
+: 1728925828:0;v totale_treni.py
+: 1728930452:0;yay 
+: 1728930719:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash\
+
+: 1728930788:0;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+: 1728930811:0;nvm install 20\
+
+: 1728930837:0;bash
+: 1728930876:0;node -v 
+: 1728930877:0;bash
+: 1728930917:0;v .zshenv
+: 1728930944:0;source .zshenv
+: 1728930956:0;node -v
+: 1728930964:0;v .zshenv
+: 1728930984:0;v ~/.config/zsh/.zshrc
+: 1728931018:0;l
+: 1728931022:0;rm .zshenv
+: 1728931025:0;l
+: 1728931029:0;nvm install 20
+: 1728931033:0;node -v
+: 1728931036:0;npm .v
+: 1728931043:0;npm -v
+: 1728931051:0;git clone https://github.com/github/copilot.vim.git \\
+  ~/.config/nvim/pack/github/start/copilot.vim
+: 1728931066:0;v
+: 1728931286:0;l
+: 1728931294:0;git status
+: 1728931298:0;cd dotfiles
+: 1728931300:0;git status
+: 1728931307:0;git restore .zshenv
+: 1728931317:0;v ~/.config/zsh/.zshrc
+: 1728931324:0;l
+: 1728931342:0;cd ~/.config/nvim/pack
+: 1728931342:0;l
+: 1728931345:0;cd github
+: 1728931347:0;l
+: 1728931349:0;lt
+: 1728931355:0;..
+: 1728931357:0;l
+: 1728931360:0;rm -r pack
+: 1728931363:0;sudo rm -r pack
+: 1728931369:0;l
+: 1728931407:0;cd lua/plugins
+: 1728931407:0;l
+: 1728931411:0;v copilot.lua
+: 1728931629:0;v
+: 1728931800:0;cd .config/nvim/lua/plugins
+: 1728931802:0;v copilot.lua
+: 1728931893:0;bash
+: 1728932027:0;v ~/.bashrc ~/.zshenv
+: 1728932053:0;v
+: 1728932063:0;v ~/.bashrc ~/.zshenv
+: 1728932072:0;l
+: 1728932075:0;ls
+: 1728932077:0;l
+: 1728932082:0;v ~/.bashrc ~/.zshenv
+: 1728932105:0;v 
+: 1728932189:0;cd CompetitiveProgramming/tmp
+: 1728932190:0;l
+: 1728932191:0;v a.cpp
+: 1728932356:0;v ~/.config/nvim/lua/plugins/copilot.lua
+: 1728932640:0;v ~/.config/i3/config
+: 1728932671:0;v ~/.config/nvim/lua/remaps.lua
+: 1728932688:0;v ~/.config/i3/config
+: 1728932823:0;v .Xresources
+: 1728932829:0;l .
+: 1728932833:0;l .*
+: 1728932839:0;ls .*
+: 1728932840:0;ls
+: 1728932841:0;l
+: 1728932845:0;lh
+: 1728932848:0;ls -a
+: 1728932852:0;ls -a .*
+: 1728932874:0;v .xinitrc
+: 1728932880:0;v .Xauthority
+: 1728932885:0;v .Xresources
+: 1728932935:0;v .config/nvim/lua/plugins
+: 1728933180:0;v .config/nvim/lua/plugins/copilot.lua
+: 1728933660:0;cd CompetitiveProgramming
+: 1728933661:0;cd tmp
+: 1728933662:0;l
+: 1728933663:0;v a.cpp
+: 1728933773:0;v .config/nvim/lua/plugins/copilot.lua
+: 1728933775:0;v a.cpp
+: 1728933830:0;bash
+: 1728934203:0;v
+: 1728934210:0;cd CompetitiveProgramming/tmp
+: 1728934211:0;l
+: 1728934213:0;v a.cpp
+: 1728934327:0;bash
+: 1728934719:0;v ~/.config/nvim/lua/plugins/copilot.lua
+: 1728934747:0;v ~/.zshenv
+: 1728934771:0;v ~/.zshenv .bashrc
+: 1728934786:0;v .zshenv
+: 1728934808:0;cd .config/nvm/versions/node/v20.18.0/bin
+: 1728934840:0;v ~/.config/nvim/lua/plugins/copilot.lua
+: 1728934846:0;v a.cpp
+: 1728935082:0;..
+: 1728935083:0;l
+: 1728935117:0;nvm 
+: 1728935124:0;v ~/.zshenv
+: 1728935135:0;source ~/.zshenv
+: 1728935155:0;v ~/CompetitiveProgramming/tmp/a.cpp
+: 1728935193:0;v ~/.config/nvim/lua/plugins/copilot.lua
+: 1728935202:0;v ~/CompetitiveProgramming/tmp/a.cpp
+: 1728935240:0;c
+: 1728935241:0;v
+: 1728935243:0;cd
+: 1728935247:0;v ~/.zshenv
+: 1728935261:0;v ~/.config/zsh/.zshrc
+: 1728935268:0;l
+: 1728935281:0;v .zshenv
+: 1728935313:0;v .config/nvim/lua/plugins/copilot.lua
+: 1728935319:0;cd CompetitiveProgramming/tmp
+: 1728935320:0;v a.cpp
+: 1728935636:0;git clone https://github.com/github/copilot.vim.git \\
+  ~/.config/nvim/pack/github/start/copilot.vim
+: 1728935648:0;v .config/nvim/lua/plugins/copilot.lua
+: 1728935654:0;rm .config/nvim/lua/plugins/copilot.lua
+: 1728935655:0;v
+: 1728935682:0;v 
+: 1728935702:0;cd
+: 1728935707:0;cd .config/nvim/lua/plugins
+: 1728935712:0;v copilot.lua
+: 1728935937:0;v ~/CompetitiveProgramming/tmp/a.cpp
+: 1728936021:0;v copilot.lua
+: 1728936292:0;..
+: 1728936292:0;l
+: 1728936296:0;cd config
+: 1728936296:0;l
+: 1728936298:0;v lazy.lua
+: 1728936431:0;..
+: 1728936432:0;cd plugins
+: 1728936434:0;v copilot.lua
+: 1728936568:0;cd CompetitiveProgramming/tmp
+: 1728936570:0;v a.cpp
+: 1728936711:0;v copilot.lua
+: 1728936767:0;v a.cpp
+: 1728936924:0;cd
+: 1728936934:0;cd ../Library
+: 1728936937:0;(alacritty &) && disown
+: 1728936943:0;v generate_graph.cpp
+: 1728945583:0;asd generate_graph.cpp
+: 1728945597:0;reset && asd a.cpp
+: 1728945600:0;reset && asd generate_graph.cpp
+: 1728946522:0;l
+: 1728946769:0;reset && asd generate_graph.cpp
+: 1728946854:0;l
+: 1728946863:0;mv generate_graph.cpp generate_graph.hpp
+: 1728946865:0;v generate_graph.hpp
+: 1728947092:0;l
+: 1728947096:0;v test.cpp
+: 1728947103:0;asd test.cpp
+: 1728947108:0;./a
+: 1728947145:0;v test.cpp generate_graph.hpp
+: 1728947160:0;./a
+: 1728947174:0;reset && asd test.cpp && ./a
+: 1728947298:0;reset && ddasd test.cpp && ./a
+: 1728948052:0;l
+: 1728948057:0;rm generate_graph.hpp test.cpp a
+: 1728948058:0;l
+: 1728948061:0;..
+: 1728948063:0;cd tmp
+: 1728948064:0;l
+: 1728948067:0;..
+: 1728948068:0;cd tmp
+: 1728948071:0;v a.cpp
+: 1728948103:0;ddasd a.cpp && ./a < in
+: 1728948111:0;l
+: 1728948136:0;ddasd a.cpp && ./a < in
+: 1728948144:0;ddasd a.cpp && ./a 
+: 1728949020:0;cpc a.cpp
+: 1728950250:0;ddasd a.cpp && ./a 
+: 1728950259:0;asd a.cpp && ./a < in
+: 1728950283:0;ddasd a.cpp && ./a < in
+: 1728950493:0;cpc a.cpp
+: 1728951386:0;v ~/.config/nvim/lua/plugins/noice.lua
+: 1728951626:0;cd
+: 1728951628:0;cd dotfiles
+: 1728951629:0;l
+: 1728951632:0;git status
+: 1728951641:0;git add *
+: 1728951643:0;git status
+: 1728951647:0;git add .config

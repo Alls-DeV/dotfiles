@@ -66,3 +66,4 @@ echo ""
 echo -e "${BLUE}Passed $4 tests!!!${NC}"
 rm $1 $2 $3 out1 out2
 exit 0
+

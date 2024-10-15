@@ -64,7 +64,7 @@ bindsym $mod+p exec flameshot gui
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+c exec code
 bindsym $mod+x exec xournalpp
-bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono-18" -nb "#1e2326" -nf "#a7c080" -sb "#a7c080" -sf "#1e2326" -l 10
+bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "#1e2326" -nf "#a7c080" -sb "#a7c080" -sf "#1e2326" -l 10
 bindsym $mod+b exec blueman-manager
 
 # Python as calculator

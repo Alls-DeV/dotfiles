@@ -23,11 +23,12 @@ return {
 				lualine_a = {{'filename', path = 1, separator = {left = '▒▓', right = '▓▒░'}}},
 				lualine_b = {
 				  {'branch', separator = {right = '▓▒░'}},
-				  {'diff', symbols = {added = ' ', modified = ' ', removed = ' '}, separator = {right = '▓▒░'}},
+				  -- {'diff', symbols = {added = ' ', modified = ' ', removed = ' '}, separator = {right = '▓▒░'}},
+				  {'diff', symbols = {added = '+', modified = '~', removed = '-'}, separator = {right = '▓▒░'}},
 				},
-				lualine_y = {'diagnostics'},
+    			lualine_c = {'diagnostics'},
 				lualine_x = {},
-				lualine_c = {},
+				lualine_y = {},
 				lualine_z = {{'progress', separator = {left = '░▒▓'}}}
 			},
 			inactive_sections = {
@@ -38,7 +39,14 @@ return {
 				lualine_y = {},
 				lualine_z = {}
 			},
-			winbar = {lualine_a = {'buffers'}},
+			tabline = {
+  				lualine_a = {},
+  				lualine_b = {'buffers'},
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {}
+			}
 		}
 	end,
 }
