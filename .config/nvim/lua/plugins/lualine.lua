@@ -13,22 +13,32 @@ return {
 					winbar = 1000,
 				},
 				component_separators = "",
-    			section_separators = "",
+				section_separators = "",
 				disabled_filetypes = {
-				  statusline = { 'terminal' },
-				  winbar = { 'terminal' },
+					statusline = { 'terminal' },
+					winbar = { 'terminal' },
 				},
 			},
 			sections = {
-				lualine_a = {{'filename', path = 1, separator = {left = '▒▓', right = '▓▒░'}}},
+				lualine_a = {{'filename', path = 1, separator = {left = '░▒▓', right = '▓▒░'}}},
 				lualine_b = {
-				  {'branch', separator = {right = '▓▒░'}},
-				  -- {'diff', symbols = {added = ' ', modified = ' ', removed = ' '}, separator = {right = '▓▒░'}},
-				  {'diff', symbols = {added = '+', modified = '~', removed = '-'}, separator = {right = '▓▒░'}},
+					{'branch', separator = {right = '▓▒░'}},
+					{'diff', symbols = {added = '+', modified = '~', removed = '-'}, separator = {right = '▓▒░'}},
 				},
-    			lualine_c = {'diagnostics'},
-				lualine_x = {},
-				lualine_y = {},
+				lualine_c = {'diagnostics'},
+				lualine_x = {'selectioncount'},
+				lualine_y = {
+					{
+						require("noice").api.status.mode.get,
+						cond = require("noice").api.status.mode.has,
+						separator = {left = '░▒▓'}
+					},
+					{
+						require("noice").api.status.search.get,
+						cond = require("noice").api.status.search.has,
+						separator = {left = '░▒▓'}
+					},
+				},
 				lualine_z = {{'progress', separator = {left = '░▒▓'}}}
 			},
 			inactive_sections = {
@@ -40,8 +50,8 @@ return {
 				lualine_z = {}
 			},
 			tabline = {
-  				lualine_a = {},
-  				lualine_b = {'buffers'},
+				lualine_a = {'buffers'},
+				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},

@@ -2648,3 +2648,236 @@ exit
 : 1728951641:0;git add *
 : 1728951643:0;git status
 : 1728951647:0;git add .config
+: 1728951649:0;git status
+: 1728951662:0;git commit -m "update"
+: 1728951666:0;git status
+: 1728951668:0;git log
+: 1728951671:0;git push
+: 1728951695:0;code .
+: 1728982236:0;source .config/zsh/.zshrc
+: 1728982244:0;v.config/zsh/.zshrc
+: 1728982247:0;v .config/zsh/.zshrc
+: 1728982258:0;v .zshenv
+: 1728982395:0;l
+: 1728982397:0;la
+: 1728982402:0;v .zshenv
+: 1728982597:0;cd CompetitiveProgramming/tmp
+: 1728982598:0;(alacritty &) && disown
+: 1728982601:0;l
+: 1728982603:0;v a.cpp
+: 1729010143:0;cd CompetitiveProgramming/tmp
+: 1729010145:0;(alacritty &) && disown
+: 1729010156:0;v a.cpp in
+: 1729014187:0;asd a.cpp && ./a < in
+: 1729014192:0;cpc a.cpp
+: 1729014611:0;dasd a.cpp && ./a 
+: 1729014914:0;cpc a.cpp
+: 1729015428:0;dasd a.cpp && ./a < in
+: 1729015601:0;reset
+: 1729015663:0;dasd a.cpp && ./a < in
+: 1729016252:0;ddasd a.cpp && ./a < in
+: 1729016298:0;cpc a.cpp
+: 1729018745:0;v ~/.config/nvim/lua/plugins/colorscheme.lua
+: 1729068106:0;v ~/.config/alacritty/tokyonight_storm.toml
+: 1729068112:0;v ~/.config/alacritty/alacritty.toml
+: 1729068132:0;l
+: 1729068142:0;v ~/.config/alacritty
+: 1729068162:0;l
+: 1729068185:0;cat > tokyonight_night.toml
+: 1729068192:0;l
+: 1729068201:0;mv tokyonight_night.toml .config/alacritty
+: 1729068204:0;cd .config/alacritty
+: 1729068206:0;v alacritty.toml
+: 1729068214:0;l
+: 1729068215:0;ls
+: 1729068265:0;ll
+: 1729068266:0;l
+: 1729068267:0;la
+: 1729068269:0;ls
+: 1729068271:0;fastfetch
+: 1729068311:0;..
+: 1729068322:0;v nvim/lua/plugins/colorscheme.lua
+: 1729068414:0;cd
+: 1729068424:0;cd CompetitiveProgramming/tmp/a.
+: 1729068431:0;v CompetitiveProgramming/tmp/a.cpp
+: 1729068445:0;v CompetitiveProgramming/Library/cp_compare
+: 1729068451:0;v nvim/lua/plugins/colorscheme.lua
+: 1729068463:0;v ~/.config/nvim/lua/plugins/colorscheme.lua
+: 1729068473:0;v CompetitiveProgramming/Library/cp_compare
+: 1729068554:0;l
+: 1729068557:0;cd .config/alacritty
+: 1729068558:0;l
+: 1729068563:0;rm tokyonight_night.toml tokyonight_storm.toml
+: 1729068564:0;l
+: 1729068566:0;v alacritty.toml
+: 1729068598:0;l
+: 1729068609:0;reset
+: 1729068612:0;cd
+: 1729068617:0;cd CompetitiveProgramming/tmp
+: 1729068623:0;(alacritty &) && disown
+: 1729068625:0;reset
+: 1729068627:0;v a.cpp in
+: 1729104594:0;v
+: 1729104596:0;vim
+: 1729104613:0;vim .vimrc
+: 1729104634:0;cd CompetitiveProgramming/tmp
+: 1729104638:0;(alacritty &) && disown
+: 1729104641:0;v a.cpp in
+: 1729163918:0;l
+: 1729163924:0;unzip Archive.zip
+: 1729163927:0;unzip texts.zip
+: 1729164025:0;cd Downloads/Telegram\ Desktop
+: 1729164026:0;l
+: 1729164028:0;cd jumpi
+: 1729164030:0;l
+: 1729164040:0;mv *.JPG *.jpg
+: 1729164222:0;cd
+: 1729164227:0;cd Downloads/Telegram\ Desktop
+: 1729164228:0;l
+: 1729164231:0;cd jumpi
+: 1729164239:0;code 1.md
+: 1729164249:0;code 1.txt
+: 1729164826:0;mv ../crop.py .
+: 1729164828:0;code crop.py
+: 1729166900:0;cd CompetitiveProgramming/tmp
+: 1729166904:0;(alacritty &) && disown
+: 1729166906:0;l
+: 1729166916:0;mv a.cpp in ../
+: 1729166917:0;l
+: 1729166926:0;cp ../Library/Template.cpp a.cpp && cp ../Library/gen.cpp gen.cpp && touch in && v a.cpp in
+: 1729167523:0;dasd a.cpp && ./a < in
+: 1729167873:0;cpc a.cpp
+: 1729167978:0;dasd a.cpp && ./a < in
+: 1729168126:0;asd gen.cpp && ./a 
+: 1729168198:0;dasd a.cpp && ./a < in
+: 1729168280:0;cp_compare a brute gen 100
+: 1729168297:0;../Library/cp_compare a brute gen 100
+: 1729168328:0;dasd a.cpp && ./a < input
+: 1729168337:0;cat input
+: 1729168349:0;dasd a.cpp && ./a < input
+: 1729168374:0;cat input
+: 1729168375:0;dasd a.cpp && ./a < input
+: 1729168605:0;dasd a.cpp && ./a < in
+: 1729168624:0;../Library/cp_compare a brute gen 100
+: 1729168635:0;../Library/cp_compare a brute gen 1000
+: 1729169021:0;dasd a.cpp && ./a < in
+: 1729169029:0;ddasd a.cpp && ./a < in
+: 1729169044:0;cpc a.cpp
+: 1729169292:0;dasd a.cpp && ./a < in
+: 1729170132:0;cpc a.cpp
+: 1729170581:0;dasd a.cpp && ./a < in
+: 1729170737:0;cpc a.cpp
+: 1729171009:0;dasd a.cpp && ./a < in
+: 1729171037:0;cpc a.cpp
+: 1729171051:0;dasd a.cpp && ./a < in
+: 1729172730:0;ddasd a.cpp && ./a < in
+: 1729173510:0;asd a.cpp
+: 1729173871:0;dasd a.cpp && ./a < in
+: 1729174338:0;asd a.cpp && ./a < in
+: 1729174417:0;reset && asd a.cpp && ./a < in
+: 1729174678:0;reset && dasd a.cpp && ./a < in
+: 1729176156:0;dasd a.cpp && ./a < in
+: 1729176170:0;cpc a.cpp
+: 1729176361:0;dasd a.cpp && ./a < in
+: 1729176388:0;cpc a.cpp
+: 1729176511:0;dasd a.cpp && ./a < in
+: 1729176742:0;cpc a.cpp
+: 1729177186:0;cd CompetitiveProgramming/tmp
+: 1729177187:0;cpc a.cpp
+: 1729177223:0;v a.cpp
+: 1729177241:0;dasd a.cpp && ./a < in
+: 1729177265:0;v a.cpp
+: 1729177579:0;cd CompetitiveProgramming/tmp
+: 1729177581:0;asd a.cpp
+: 1729177632:0;dasd a.cpp && ./a < in
+: 1729177637:0;cpc a.cpp
+: 1729203303:0;cd CompetitiveProgramming/tmp
+: 1729203307:0;.. l
+: 1729203312:0;../ ll
+: 1729203315:0;../ ls
+: 1729203317:0;ls ..
+: 1729203327:0;mv a.cpp a.cpp
+: 1729203334:0;mv ../a.cpp a.cpp
+: 1729203339:0;mv ../in in
+: 1729203346:0;(alacritty &) && disown
+: 1729203351:0;v a.cpp in
+: 1729203540:0;dasd a.cpp && ./a < in
+: 1729204052:0;cpc a.cpp
+: 1729204055:0;dasd a.cpp && ./a < in
+: 1729204096:0;cpc a.cpp
+: 1729204946:0;dasd a.cpp && ./a < in
+: 1729204986:0;cpc b.cpp
+: 1729204989:0;cpc a.cpp
+: 1729206399:0;..
+: 1729206403:0;cd Library
+: 1729206404:0;l
+: 1729206423:0;v rmq.cpp
+: 1729206437:0;v Template.cpp
+: 1729206501:0;v extra.cpp
+: 1729206528:0;mv extra.cpp kactl_template.cpp
+: 1729206534:0;v kactl_template.cpp
+: 1729207134:0;v pragma.cpp
+: 1729207137:0;..
+: 1729207140:0;cd tmp
+: 1729207141:0;v a.cpp
+: 1729207170:0;cpc a.cpp
+: 1729207225:0;dasd a.cpp && ./a < in
+: 1729242413:0;cd CompetitiveProgramming
+: 1729242413:0;l
+: 1729242416:0;unzip contest6_testdata.zip
+: 1729242417:0;l
+: 1729242427:0;v v
+: 1729242438:0;lt
+: 1729242449:0;l
+: 1729242453:0;mkdir tests
+: 1729242467:0;mv kamen magija maraton prase prostor v tests
+: 1729242468:0;l
+: 1729242479:0;cd tests
+: 1729242481:0;l
+: 1729242483:0;v kamen
+: 1729242499:0;l
+: 1729242875:0;..
+: 1729242877:0;rm -r tests
+: 1729242878:0;l
+: 1729242880:0;rm contest6_testdata.zip
+: 1729242907:0;l
+: 1729242910:0;unzip contest5_solutions.zip
+: 1729242911:0;l
+: 1729242929:0;rm ivana* liga* natrij* tenis* trik*
+: 1729242929:0;l
+: 1729242933:0;rm dvaput.pas
+: 1729242937:0;rm contest5_solutions.zip
+: 1729242941:0;l
+: 1729242958:0;v dvaput.c
+: 1729257899:0;cd CompetitiveProgramming
+: 1729257899:0;l
+: 1729257908:0;mv dvaput.c tmp
+: 1729257909:0;l
+: 1729257911:0;cd tmp
+: 1729257916:0;l
+: 1729257919:0;(alacritty &) && disown
+: 1729257921:0;l
+: 1729257930:0;v in
+: 1729257951:0;l
+: 1729257971:0;mv dvaput.c ..
+: 1729257972:0;l
+: 1729257977:0;rm *
+: 1729257979:0;l
+: 1729257985:0;mv ../dvaput.c .
+: 1729257986:0;l
+: 1729257994:0;touch a.cpp
+: 1729257994:0;l
+: 1729258006:0;cp ../Library/gen.cpp gen.cpp
+: 1729258007:0;l
+: 1729258011:0;v gen.cpp a.cpp
+: 1729258138:0;asd gen.cpp && ./a 
+: 1729258551:0;cd
+: 1729258557:0;cd .config/nvim/lua/plugins
+: 1729258559:0;v lualine.lua
+: 1729264586:0;cd
+: 1729264592:0;cd CompetitiveProgramming/tmp
+: 1729264593:0;l
+: 1729264596:0;v gen.cpp
+: 1729264638:0;asd gen.cpp && ./a 
+: 1729264680:0;asd gen.cpp && ./a > input
+: 1729264692:0;asd dvaput.c && ./a < input

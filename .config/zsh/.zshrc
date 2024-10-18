@@ -1,6 +1,3 @@
-export PATH=$HOME/CompetitiveProgramming/Library:$HOME/.local/bin:$HOME/scripts:$HOME/.config/fzf/bin:$PATH
-export XDG_CONFIG_HOME="$HOME/.config"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 export EDITOR='nvim'
