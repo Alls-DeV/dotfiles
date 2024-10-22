@@ -90,11 +90,11 @@ mode $rsz {
 }
 
 # Power menu
-set $mode_system    "                                                                  (L)ock (E)xit (R)eboot (P)oweroff"
+set $mode_system    "                                                                  (L)ock log(O)ut (R)eboot (P)oweroff"
 bindsym $mod+Escape mode $mode_system
 mode $mode_system {
     bindsym l exec --no-startup-id dm-tool lock, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym o exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff, mode "default"
     bindsym Escape mode "default"

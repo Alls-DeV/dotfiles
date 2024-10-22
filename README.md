@@ -1,10 +1,23 @@
 # Arch
 
+This repo contains my dotfile configuration, allowing for a consistent computing experience across multiple machines.
+These days I primarily use GNU/Linux via the [Arch Linux distribution](https://archlinux.org).
+
+I manage the various configuration files in this repo using [GNU Stow](https://www.gnu.org/software/stow/).  This allows me to set up symlinks for all of my dotfiles using a single command:
+
+```bash
+stow .
+```
+
+## Inspiration
+
+The inspiration for this configuration comes from [this video](https://www.youtube.com/watch?v=y6XCebnB9gs).
+
 ## Installing Programs
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S install i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow
+sudo pacman -S install i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow arandr
 ```
 
 ## Systemctl Privileges
@@ -43,10 +56,6 @@ To set zsh as the default shell, run the following command:
 ```bash
 chsh -s $(which zsh)
 ```
-
-Next, clone the following plugins into the `plugins` folder under `.config/zsh`:
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ## Lightdm Configuration
 
