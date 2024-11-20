@@ -8,9 +8,10 @@ final_space = true
   background = 'transparent'
 
 [transient_prompt]
-  template = '❯ '
+  template = '{{ .PWD }} '
   background = 'transparent'
-  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}blue{{end}}']
+  foreground = 'magenta'
+  # foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}blue{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -82,7 +83,7 @@ final_space = true
 
   [[blocks.segments]]
     style = 'plain'
-    template = '❯'
+    template = ' '
     background = 'transparent'
     type = 'text'
     foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}blue{{end}}']
