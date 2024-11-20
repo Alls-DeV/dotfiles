@@ -40,7 +40,6 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-# bindkey '^[w' kill-region
 
 zle_highlight+=(paste:none)
 
@@ -72,7 +71,6 @@ alias lt='ls --tree'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias v='nvim'
@@ -82,6 +80,16 @@ alias asd='g++ -std=gnu++20 -Ofast -o a'
 alias dasd='g++ -std=gnu++20 -Ofast -DALE -o a'
 alias ddasd='g++ -std=gnu++20 -Wall -Wextra -g -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -O2 -DALE -o a'
 alias cpc='xclip -sel c < '
+
+# Automatically do an ls after each cd, z, or zoxide
+cd ()
+{
+	if [ -n "$1" ]; then
+		builtin cd "$@" && ls
+	else
+		builtin cd ~ && ls
+	fi
+}
 
 # Shell integrations
 # eval "$(fzf --zsh)"

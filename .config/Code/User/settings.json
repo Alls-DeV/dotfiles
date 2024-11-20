@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Everforest Dark",
     "everforest.darkContrast": "hard",
     "editor.mouseWheelZoom": true,
     "window.zoomLevel": 2,
@@ -10,7 +9,6 @@
     "editor.wordWrap": "on",
     "workbench.startupEditor": "none",
     "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
-    "breadcrumbs.enabled": false,
     "window.menuBarVisibility": "toggle",
     "github.copilot.enable": {
         "plaintext": "true",
