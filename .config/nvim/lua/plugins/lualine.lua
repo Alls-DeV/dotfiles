@@ -9,8 +9,7 @@ return {
 				ignore_focus = {},
 				globalstatus = false,
 				refresh = {
-					statusline = 1,
-					tabline = 1,
+					statusline = 1
 				},
 				component_separators = '',
 				section_separators = '',
@@ -50,14 +49,6 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = {{'filename', path = 1}},
-				lualine_b = {},
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = {},
-				lualine_z = {}
-			},
-			tabline = {
-				lualine_a = {'buffers'},
 				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},

@@ -79,7 +79,6 @@ alias v='nvim'
 alias asd='g++ -std=gnu++20 -Ofast -o a'
 alias dasd='g++ -std=gnu++20 -Ofast -DALE -o a'
 alias ddasd='g++ -std=gnu++20 -Wall -Wextra -g -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -O2 -DALE -o a'
-alias cpc='xclip -sel c < '
 
 # Automatically do an ls after each cd, z, or zoxide
 cd ()
@@ -94,3 +93,10 @@ cd ()
 # Shell integrations
 # eval "$(fzf --zsh)"
 # eval "$(zoxide init --cmd cd zsh)"
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

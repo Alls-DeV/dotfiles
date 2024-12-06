@@ -7,20 +7,20 @@ return {
 		-- 	vim.cmd.colorscheme("gruvbox")
 		-- end,
 	-- },
-	{
-		"neanias/everforest-nvim",
-		config = function()
-			require("everforest").setup({
-				background = "hard"
-			})
-			vim.opt.background = "dark"
-			vim.cmd.colorscheme("everforest")
-		end,
-	},
 	-- {
-	-- 	"folke/tokyonight.nvim",
+	-- 	"neanias/everforest-nvim",
 	-- 	config = function()
-	-- 		vim.cmd.colorscheme("tokyonight-storm")
+	-- 		require("everforest").setup({
+	-- 			background = "hard"
+	-- 		})
+	-- 		vim.opt.background = "dark"
+	-- 		vim.cmd.colorscheme("everforest")
 	-- 	end,
-	-- }
+	-- },
+	{
+		"folke/tokyonight.nvim",
+		config = function()
+			vim.cmd.colorscheme("tokyonight-night")
+		end,
+	}
 }

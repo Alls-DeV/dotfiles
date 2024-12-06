@@ -11,7 +11,6 @@ final_space = true
   template = '{{ .PWD }} '
   background = 'transparent'
   foreground = 'magenta'
-  # foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}blue{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -43,7 +42,7 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'right'
-  overflow = 'hidden'
+  overflow = 'hide'
 
   [[blocks.segments]]
     style = 'plain'
@@ -73,7 +72,7 @@ final_space = true
 
   [[blocks.segments]]
     style = 'plain'
-    template = '{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }} '
+    template = '{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }} '
     foreground = 'yellow'
     background = 'transparent'
     type = 'python'
