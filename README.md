@@ -17,7 +17,7 @@ The inspiration for this configuration comes from [this video](https://www.youtu
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S install i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow arandr
+sudo pacman -S i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow arandr network-manager-applet
 ```
 
 ## Systemctl Privileges
@@ -104,7 +104,7 @@ Browser extensions:
 - [Rearrange Tabs](https://chrome.google.com/webstore/detail/rearrange-tabs/ccnnhhnmpoffieppjjkhdakcoejcpbga)
 
 ## System, Icon, and Cursor Theme
-- [Everforest GTK Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme)
+- unzip into `~/.themes` or `~/.icons` the themes downloaded from http://gnome-look.org or http://xfce-look.org and choose them from lxappearance
 - [Phinger Cursors](https://github.com/phisch/phinger-cursors)
 
 ## Enable 'Open in Terminal' in the file explorer
