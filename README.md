@@ -115,3 +115,6 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec 'alacritty
 
 ## Huion tablet
 - [arch wiki](https://wiki.archlinux.org/title/Graphics_tablet#Installation)
+
+## HiDPI displays
+- https://wiki.archlinux.org/title/HiDPI#X_Resources
