@@ -17,7 +17,7 @@ The inspiration for this configuration comes from [this video](https://www.youtu
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S i3 xorg unzip wget pulseaudio pavucontrol base-devel curl nemo flameshot lightdm lightdm-gtk-greeter telegram-desktop gnu-free-fonts ttf-font-awesome ttf-jetbrains-mono-nerd ttf-liberation noto-fonts-emoji firefox lxappearance zsh eog evince vlc bat xclip brightnessctl playerctl nitrogen alsa-utils xournalpp blueman neovim cronie dunst eza man-db git fastfetch dmenu stow arandr network-manager-applet
+sudo pacman -S i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller
 ```
 
 ## Systemctl Privileges
@@ -27,50 +27,11 @@ sudo nvim /etc/sudoers.d/sysctl
 alls ALL = NOPASSWD: /bin/systemctl
 ```
 
-## Touchpad Configuration
-To enable click on tap and scroll with two fingers, create the file
-`/etc/X11/xorg.conf.d/50-libinput.conf` with the following content:
-
-```bash
-Section "InputClass"
-    Identifier "libinput touchpad catchall"
-    MatchIsTouchpad "on"
-    MatchDevicePath "/dev/input/event*"
-    Driver "libinput"
-    Option "Tapping" "on"
-    Option "DisableWhileTyping" "on"
-EndSection
-
-Section "InputClass"
-    Identifier "touchpad ignore duplicates"
-    MatchIsTouchpad "on"
-    MatchOS "Linux"
-    MatchDevicePath "/dev/input/mouse*"
-    Option "Ignore" "on"
-    Option "VertTwoFingerScroll" "on"
-EndSection
-```
-
 ## Zsh Configuration
 To set zsh as the default shell, run the following command:
 ```bash
 chsh -s $(which zsh)
 ```
-
-## Lightdm Configuration
-
-Enable the lightdm service to start at boot:
-```bash
-sudo systemctl enable lightdm
-```
-
-Next, open the file `/etc/lightdm/lightdm-gtk-greeter.conf` and insert the following lines:
-```bash
-[greeter]
-background=/usr/share/pixmaps/img1.jpeg
-default-user-image=/usr/share/pixmaps/img2.jpeg
-```
-Is important to place the image in `/usr/share/pixmaps/`.
 
 ## Notification of low battery
 1. Make sure che script is executable.
@@ -106,6 +67,7 @@ Browser extensions:
 ## System, Icon, and Cursor Theme
 - unzip into `~/.themes` or `~/.icons` the themes downloaded from http://gnome-look.org or http://xfce-look.org and choose them from lxappearance
 - [Phinger Cursors](https://github.com/phisch/phinger-cursors)
+- [Rose-pine cursors](https://github.com/rose-pine/cursor)
 
 ## Enable 'Open in Terminal' in the file explorer
 ```bash
