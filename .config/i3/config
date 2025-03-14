@@ -42,7 +42,7 @@ bindsym $mod+q kill
 bindsym $mod+Shift+r reload
 bindsym $mod+o split toggle
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Shift+f floating toggle ; [floating] resize set 1000 600 ; move position center
+bindsym $mod+Shift+f floating toggle ; [floating] resize set 1200 800 ; move position center
 
 # Audio control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute && pkill -RTMIN+1 i3blocks
@@ -60,11 +60,11 @@ bindsym $mod+n exec nemo
 bindsym $mod+a exec pavucontrol
 bindsym $mod+p exec flameshot gui
 bindsym $mod+c exec code
-bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "#101010" -nf "#666666" -sb "#101010" -sf "#ffffff" -l 10
+bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "#191724" -nf "#908caa" -sb "#191724" -sf "#9ccfd8" -l 10
 
 # Python as calculator
 bindsym $mod+s exec alacritty --class ciao -e /usr/bin/python3
-for_window [instance="ciao"] floating enable, [floating] resize set 800 400 , move position center
+for_window [instance="ciao"] floating enable, [floating] resize set 1200 800 , move position center
 
 # Assigning applications to workspaces
 assign [class="(?i)google-chrome"] $ws1
@@ -93,16 +93,17 @@ mode $mode_system {
     bindsym Escape mode "default"
 }
 # colors
-set $black  #232136
+set $black  #191724
 set $grey   #908caa
 set $white  #e0def4
 set $red    #eb6f92
 set $foam   #9ccfd8
+set $blue 	#3e8fb0
 
 # Border color settings
-client.focused          $black $grey  $white $red   $foam
+client.focused          $black $black $foam $foam  $foam
 client.focused_inactive $black $black $foam $black $black
-client.unfocused        $black $black $white $black $black
+client.unfocused        $black $black $grey $black $black
 
 # Bar Configuration
 bar {
