@@ -1,8 +1,8 @@
-# import = ["~/.config/alacritty/everforest.toml"]
+general.import = ["~/.config/alacritty/rose-pise-moon.toml"]
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }
-size = 10
+size = 12
 
 [window]
 padding = { x = 0, y = 0 }

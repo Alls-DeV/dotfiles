@@ -2,7 +2,6 @@ return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	config = function()
-		local copilot = require("plugins.components.copilot_status")
 		require('lualine').setup {
 			options = {
 				icons_enabled = true,
@@ -25,22 +24,8 @@ return {
 				lualine_c = {
 					'diagnostics',
 				},
-				lualine_x = {
-					{
-						require("noice").api.status.mode.get,
-						cond = require("noice").api.status.mode.has,
-					},
-					{
-						require("noice").api.status.search.get,
-						cond = require("noice").api.status.search.has,
-					},
-					{
-						require("noice").api.status.command.get,
-						cond = require("noice").api.status.command.has,
-					},
-				},
+				lualine_x = {},
 				lualine_y = {
-					{copilot.copilot_status, separator = {left = ''}},
 					{'location', separator = {left = ''}},
 				},
 				lualine_z = {
