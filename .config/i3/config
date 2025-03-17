@@ -71,27 +71,14 @@ assign [class="(?i)google-chrome"] $ws1
 for_window [class=(?i)google-chrome] focus
 
 # Resizing windows
-set $rsz "RESIZING"
-bindsym $mod+r mode $rsz
-mode $rsz {
-    bindsym h resize shrink width 5 px or 5 ppt
-    bindsym j resize shrink height 5 px or 5 ppt
-    bindsym k resize grow height 5 px or 5 ppt
-    bindsym l resize grow width 5 px or 5 ppt
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+bindsym $mod+Ctrl+l resize grow width 5
+bindsym $mod+Ctrl+k resize grow height 5
+bindsym $mod+Ctrl+h resize shrink width 5
+bindsym $mod+Ctrl+j resize shrink height 5
 
 # Power menu
-set $mode_system "(L)ock log(O)ut (R)eboot (P)oweroff"
-bindsym $mod+Escape mode $mode_system
-mode $mode_system {
-    bindsym l exec --no-startup-id dm-tool lock, mode "default"
-    bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
-    bindsym Escape mode "default"
-}
+bindsym $mod+Escape exec ~/scripts/power.sh
+
 # colors
 set $black  #191724
 set $grey   #908caa
@@ -120,7 +107,6 @@ bar {
         binding_mode       $black   $black      $red
       }
 }
-
 
 exec --no-startup-id sudo systemctl start bluetooth
 exec --no-startup-id setxkbmap -option caps:escape
