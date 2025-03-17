@@ -88,7 +88,7 @@ set $foam   #9ccfd8
 set $blue 	#3e8fb0
 
 # Border color settings
-client.focused          $black $black $foam $foam  $foam
+client.focused          $black $black $foam $red  $foam
 client.focused_inactive $black $black $foam $black $black
 client.unfocused        $black $black $grey $black $black
 
