@@ -71,10 +71,10 @@ assign [class="(?i)google-chrome"] $ws1
 for_window [class=(?i)google-chrome] focus
 
 # Resizing windows
-bindsym $mod+Ctrl+l resize grow width 5
-bindsym $mod+Ctrl+k resize grow height 5
-bindsym $mod+Ctrl+h resize shrink width 5
-bindsym $mod+Ctrl+j resize shrink height 5
+bindsym $mod+Ctrl+l resize grow width 5 px or 5 ppt
+bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+h resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
 
 # Power menu
 bindsym $mod+Escape exec ~/scripts/power.sh
