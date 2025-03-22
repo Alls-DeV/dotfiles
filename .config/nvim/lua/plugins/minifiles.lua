@@ -2,7 +2,6 @@ return {
 	'echasnovski/mini.files',
 	version = '*',
 	config = function()
-		local map = vim.keymap.set
 		require("mini.files").setup({
 			options = {
 				permanent_delete = false,
@@ -25,16 +24,11 @@ return {
 			},
 			windows = {
 				preview = true,
+				width_focus = 25,
 				width_preview = 55
 			},
 		})
 
-		map(
-			"n",
-			"<leader>et",
-			":e ~/.local/share/nvim/mini.files/trash/<cr>",
-			{ desc = "MiniFiles Trash", noremap = true, silent = true }
-		)
-		map("n", "<leader>b", ":lua MiniFiles.open()<cr>", { desc = "MiniFiles Open", noremap = true, silent = false })
+		vim.keymap.set("n", "<leader>b", ":lua MiniFiles.open()<cr>", { desc = "MiniFiles Open", noremap = true, silent = false })
 	end,
 }

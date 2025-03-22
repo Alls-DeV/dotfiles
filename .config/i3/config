@@ -3,7 +3,7 @@ font pango:JetBrains Mono Nerd Font Propo 11
 set $mod Mod4
 workspace_layout default
 bindsym $mod+Shift+s layout toggle tabbed splith
-new_window pixel 3
+new_window pixel 1
 hide_edge_borders smart
 floating_modifier $mod
 
@@ -82,10 +82,8 @@ bindsym $mod+Escape exec ~/scripts/power.sh
 # colors
 set $black  #191724
 set $grey   #908caa
-set $white  #e0def4
 set $red    #eb6f92
 set $foam   #9ccfd8
-set $blue 	#3e8fb0
 
 # Border color settings
 client.focused          $black $black $foam $red  $foam
@@ -105,9 +103,8 @@ bar {
         active_workspace   $black   $black      $grey
         urgent_workspace   $red     $red        $black
         binding_mode       $black   $black      $red
-      }
+    }
 }
 
-exec --no-startup-id sudo systemctl start bluetooth
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id feh --bg-scale ~/Pictures/space.jpg

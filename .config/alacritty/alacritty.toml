@@ -1,4 +1,4 @@
-general.import = ["~/.config/alacritty/rose-pise-moon.toml"]
+# general.import = ["~/.config/alacritty/kanagawa.toml"]
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }

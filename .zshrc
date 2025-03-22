@@ -69,7 +69,6 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias v='nvim'
 
 # Competitive Programming
 alias asd='g++ -std=gnu++20 -Ofast -o a'
