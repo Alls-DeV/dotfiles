@@ -55,7 +55,7 @@ echo "full: ${FULL}"
 # set error message
 MESSAGE="Low battery warning, find charger"
 # set energy limit in percent, where warning should be displayed
-LIMIT="339000"
+LIMIT="13490000"
 
 I3BAT_TMPDIR="$(mktemp --directory --tmpdir i3batwarn.XXX)"
 NAGBARPIDFILE="${I3BAT_TMPDIR}/nagbarpid_file"
