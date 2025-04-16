@@ -88,3 +88,5 @@ cd ()
 # Shell integrations
 # eval "$(fzf --zsh)"
 # eval "$(zoxide init --cmd cd zsh)"
+
+alias pythia_init='source  ~/pythia_init'

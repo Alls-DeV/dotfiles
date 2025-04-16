@@ -6,6 +6,6 @@ nnoremap <leader>s :s/\<<C-r><C-w>\>//gc<Left><Left><Left>
 noremap x "_x
 vnoremap x "_x
 autocmd TextChanged,TextChangedI * silent! write
-colorscheme habamax
+colorscheme retrobox
 nnoremap <leader>b :ls<CR>:b<space>
-nnoremap <esc><esc> :noh<CR>
+nnoremap <esc> :noh<CR>

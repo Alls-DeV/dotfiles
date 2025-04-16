@@ -3,7 +3,7 @@ font pango:JetBrains Mono Nerd Font Propo 11
 set $mod Mod4
 workspace_layout default
 bindsym $mod+Shift+s layout toggle tabbed splith
-new_window pixel 1
+new_window pixel 2
 hide_edge_borders smart
 floating_modifier $mod
 
@@ -61,6 +61,7 @@ bindsym $mod+a exec pavucontrol
 bindsym $mod+p exec flameshot gui
 bindsym $mod+c exec code
 bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "#191724" -nf "#908caa" -sb "#191724" -sf "#9ccfd8" -l 10
+bindsym $mod+b exec blueman-manager
 
 # Python as calculator
 bindsym $mod+s exec alacritty --class ciao -e /usr/bin/python3

@@ -17,7 +17,7 @@ The inspiration for this configuration comes from [this video](https://www.youtu
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller
+sudo pacman -S i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller blueman
 ```
 
 ## Systemctl Privileges
