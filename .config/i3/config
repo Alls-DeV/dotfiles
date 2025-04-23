@@ -87,9 +87,10 @@ set $red    #eb6f92
 set $foam   #9ccfd8
 
 # Border color settings
-client.focused          $black $black $foam $red  $foam
-client.focused_inactive $black $black $foam $black $black
-client.unfocused        $black $black $grey $black $black
+#                       border_bar   back     text     direction   border_win
+client.focused          $foam        $foam    $black   $red        $foam
+client.focused_inactive $black       $black   $foam    $black      $black
+client.unfocused        $black       $black   $grey    $black      $black
 
 # Bar Configuration
 bar {
