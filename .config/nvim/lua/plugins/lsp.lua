@@ -1,3 +1,10 @@
+local diagnostic_icons = {
+	ERROR = "",
+	WARN = "",
+	HINT = "",
+	INFO = "",
+}
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -6,6 +13,12 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
+		-- Define the diagnostic signs.
+		for severity, icon in pairs(diagnostic_icons) do
+			local hl = "DiagnosticSign" .. severity:sub(1, 1) .. severity:sub(2):lower()
+			vim.fn.sign_define(hl, { text = icon, texthl = hl })
+		end
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
@@ -51,13 +64,22 @@ return {
 				},
 			},
 			virtual_text = { current_line = true },
-			float = { border = "rounded", source = "if_many" },
+			float = {
+				source = "if_many",
+				border = "rounded",
+				-- Show severity icons as prefixes.
+				prefix = function(diag)
+					local level = vim.diagnostic.severity[diag.severity]
+					local prefix = string.format(" %s ", diagnostic_icons[level])
+					return prefix, "Diagnostic" .. level:gsub("^%l", string.upper)
+				end,
+			},
 			signs = {
 				text = {
-					[vim.diagnostic.severity.ERROR] = "󰅚 ",
-					[vim.diagnostic.severity.WARN] = "󰀪 ",
-					[vim.diagnostic.severity.INFO] = "󰋽 ",
-					[vim.diagnostic.severity.HINT] = "󰌶 ",
+					[vim.diagnostic.severity.ERROR] = diagnostic_icons.ERROR,
+					[vim.diagnostic.severity.WARN] = diagnostic_icons.WARN,
+					[vim.diagnostic.severity.INFO] = diagnostic_icons.INFO,
+					[vim.diagnostic.severity.HINT] = diagnostic_icons.HINT,
 				},
 			},
 		})
@@ -66,6 +88,12 @@ return {
 		end, opts)
 		vim.keymap.set("n", "]d", function()
 			vim.diagnostic.goto_next()
+		end, opts)
+		vim.keymap.set("n", "[e", function()
+			vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+		end, opts)
+		vim.keymap.set("n", "]e", function()
+			vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
 		end, opts)
 
 		-- LSP servers and clients are able to communicate to each other what features they support.
