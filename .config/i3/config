@@ -67,10 +67,6 @@ bindsym $mod+b exec blueman-manager
 bindsym $mod+s exec alacritty --class ciao -e /usr/bin/python3
 for_window [instance="ciao"] floating enable, [floating] resize set 1200 800 , move position center
 
-# Assigning applications to workspaces
-assign [class="(?i)google-chrome"] $ws1
-for_window [class=(?i)google-chrome] focus
-
 # Resizing windows
 bindsym $mod+Ctrl+l resize grow width 5 px or 5 ppt
 bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
