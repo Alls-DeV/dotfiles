@@ -46,3 +46,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Variable highlight faster
+vim.o.updatetime = 100

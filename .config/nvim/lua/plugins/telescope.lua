@@ -30,6 +30,12 @@ return {
 				{ desc = "[S]earch [D]iagnostics in the entire workspace" }
 			)
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+			vim.keymap.set("n", "<leader>sc", function()
+				builtin.find_files({
+					prompt_title = "Neovim Config",
+					search_dirs = { vim.fn.expand("~/.config/nvim") },
+				})
+			end, { desc = "[S]earch neovim [C]onfig files" })
 		end,
 	},
 }

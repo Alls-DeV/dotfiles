@@ -1,4 +1,22 @@
-# general.import = ["~/.config/alacritty/kanagawa.toml"]
+[colors.normal]
+black = "#181818"
+red = "#f92672"
+green = "#a6e22e"
+yellow = "#f4bf75"
+blue = "#66d9ef"
+magenta = "#ae81ff"
+cyan = "#a1efe4"
+white = "#d8d8d8"
+
+[colors.bright]
+black = "#585858"
+red = "#f92672"
+green = "#a6e22e"
+yellow = "#f4bf75"
+blue = "#66d9ef"
+magenta = "#ae81ff"
+cyan = "#a1efe4"
+white = "#f8f8f8"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }

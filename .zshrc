@@ -86,7 +86,9 @@ cd ()
 }
 
 # Shell integrations
-# eval "$(fzf --zsh)"
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='--multi --no-height --extended'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 # eval "$(zoxide init --cmd cd zsh)"
 
 alias pythia_init='source  ~/pythia_init'
