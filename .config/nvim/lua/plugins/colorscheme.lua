@@ -18,7 +18,7 @@ return {
 -- 	priority = 1000,
 -- 	config = function()
 -- 		vim.cmd("colorscheme gruvbox")
--- 	end
+-- 	end,
 -- }
 -- return {
 -- 	"loctvl842/monokai-pro.nvim",

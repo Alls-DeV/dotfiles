@@ -22,9 +22,6 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				local bufnr = event.buf
-
 				local map = function(keys, func, desc, mode)
 					mode = mode or "n"
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -53,28 +50,6 @@ return {
 				-- WARN: This is not Goto Definition, this is Goto Declaration.
 				--  For example, in C this would take you to the header.
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
-				if client and client.supports_method("textDocument/documentHighlight") then
-					-- Crea un gruppo di autocomandi per gestire l'evidenziazione.
-					-- `clear = true` assicura che non vengano aggiunti duplicati al ricaricamento della config.
-					local highlight_augroup = vim.api.nvim_create_augroup("LspDocumentHighlights", { clear = true })
-
-					-- Evidenzia i riferimenti quando il cursore si ferma.
-					vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
-						buffer = bufnr,
-						group = highlight_augroup,
-						desc = "Highlight references under the cursor",
-						callback = vim.lsp.buf.document_highlight,
-					})
-
-					-- Pulisci le evidenziazioni quando il cursore si muove o si entra in modalità inserimento.
-					vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter" }, {
-						buffer = bufnr,
-						group = highlight_augroup,
-						desc = "Clear highlight references",
-						callback = vim.lsp.buf.clear_references,
-					})
-				end
 			end,
 		})
 
