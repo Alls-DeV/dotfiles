@@ -17,7 +17,7 @@ The inspiration for this configuration comes from [this video](https://www.youtu
 
 ```bash
 sudo pacman -Syu
-sudo pacman -S i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller blueman
+yay i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller blueman alacritty google-chrome visual-studio-code-bin
 ```
 
 ## Systemctl Privileges
@@ -32,6 +32,9 @@ To set zsh as the default shell, run the following command:
 ```bash
 chsh -s $(which zsh)
 ```
+
+## Oh-my-posh
+- https://ohmyposh.dev/docs/installation/linux
 
 ## Notification of low battery
 1. Make sure che script is executable.

@@ -105,4 +105,4 @@ bar {
 }
 
 exec --no-startup-id setxkbmap -option caps:escape
-exec --no-startup-id feh --bg-scale ~/Pictures/space.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/0.jpg

@@ -14,18 +14,55 @@ function ProgressBar {
 }
 
 function show_help {
-    echo "Usage: cp_validate solution validator generator num_tests"
+    echo "USAGE:"
+    echo "    cp_validate [OPTIONS] <solution> <validator> <generator> <num_tests>"
     echo ""
-    echo "solution, validator and generator are respectively names of the c++ files. Validator should return the string 'OK' or the string that explains the error. Validator first take in input the generator input and next the program output"
+    echo "ARGUMENTS:"
+    echo "    <solution>     C++ solution file to validate (.cpp or .cc)"
+    echo "    <validator>    C++ validator program (.cpp or .cc)"
+    echo "    <generator>    Test case generator C++ file (.cpp or .cc)"
+    echo "    <num_tests>    Number of test cases to run"
     echo ""
-    echo "Options:"
-    echo "  -h, --help  Show this help message and exit."
+    echo "OPTIONS:"
+    echo "    -h, --help     Show this help message and exit"
+    echo "    --debug        Enable debug mode to show detailed progress information"
+    echo ""
+    echo "DESCRIPTION:"
+    echo "    Validates a C++ solution by running it against randomly generated"
+    echo "    test cases and checking the output with a custom validator."
+    echo "    "
+    echo "    The validator receives the test input followed by the solution's"
+    echo "    output via stdin. It should print 'OK' if the output is correct,"
+    echo "    or an error message if the output is invalid."
+}
+
+# Function to validate and extract base filename from c++ file
+function validate_and_extract_filename {
+    local filename="$1"
+    local param_name="$2"
+    
+    if [[ "$filename" == *.cpp ]]; then
+        echo "${filename%.cpp}"
+    elif [[ "$filename" == *.cc ]]; then
+        echo "${filename%.cc}"
+    else
+        echo -e "${RED}Error: $param_name must have .cpp or .cc extension.${NC}"
+        show_help
+        exit 1
+    fi
 }
 
 # Check for help option
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     show_help
     exit 0
+fi
+
+# Check for debug option
+DEBUG=false
+if [[ "$1" == "--debug" ]]; then
+    DEBUG=true
+    shift
 fi
 
 # Check for correct number of arguments
@@ -35,36 +72,106 @@ if [ "$#" -ne 4 ]; then
     exit 1
 fi
 
-rm $1 $2 $3 2> /dev/null
-g++ -Ofast -std=c++20 $1.cpp -o $1
-g++ -Ofast -std=c++20 $2.cpp -o $2
-g++ -Ofast -std=c++20 $3.cpp -o $3
-if [ ! -f $1 ] || [ ! -f $2 ] || [ ! -f $3 ]; then
+# Create a temporary directory for executables and I/O files inside the current directory
+current_dir=$(pwd)
+temp_dir_id=$(mktemp -u XXXXXXXXXX)
+temp_dir="$current_dir/cp_validate-$temp_dir_id"
+mkdir -p "$temp_dir"
+
+# Validate extensions and extract base filenames
+sol=$(validate_and_extract_filename "$1" "solution")
+val=$(validate_and_extract_filename "$2" "validator")
+gen=$(validate_and_extract_filename "$3" "generator")
+
+# Compile the solutions and generator
+g++ -Ofast -std=c++20 $1 -o $temp_dir/$sol
+g++ -Ofast -std=c++20 $2 -o $temp_dir/$val
+g++ -Ofast -std=c++20 $3 -o $temp_dir/$gen
+
+# Check if the executables were created successfully
+if [ ! -f $temp_dir/$sol ] || [ ! -f $temp_dir/$val ] || [ ! -f $temp_dir/$gen ]; then
+    rm -rf $temp_dir
     exit 0
 fi
 for ((testNum=0;testNum<$4;testNum++))
 do
-    ProgressBar ${testNum} ${4}
-    ./$3 > input
-    ./$1 < input > out
-    cat input out > data
-    ./$2 < data > res
-    result=$(cat res)
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Starting test $((testNum+1))/$4"
+    else
+        ProgressBar ${testNum} ${4}
+    fi
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Running generator..."
+    fi
+    $temp_dir/$gen > $temp_dir/input
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo -e "${RED}Generator crashed!${NC}"
+        cp $temp_dir/input $current_dir/input_$temp_dir_id
+        rm -rf $temp_dir
+        exit 1
+    fi
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Running solution..."
+    fi
+    $temp_dir/$sol < $temp_dir/input > $temp_dir/out
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo -e "${RED}$sol crashed!${NC}"
+        echo -e "${BLUE}Input:${NC}"
+        cat $temp_dir/input
+        cp $temp_dir/input $current_dir/input_$temp_dir_id
+        rm -rf $temp_dir
+        exit 1
+    fi
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Preparing data for validator..."
+    fi
+    cat $temp_dir/input $temp_dir/out > $temp_dir/data
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Running validator..."
+    fi
+    $temp_dir/$val < $temp_dir/data > $temp_dir/res
+    if [ $? -ne 0 ]; then
+        echo ""
+        echo -e "${RED}Validator crashed!${NC}"
+        echo -e "${BLUE}Input:${NC}"
+        cat $temp_dir/input
+        echo -e "${BLUE}Output:${NC}"
+        cat $temp_dir/out
+        cp $temp_dir/input $current_dir/input_$temp_dir_id
+        rm -rf $temp_dir
+        exit 1
+    fi
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Checking validator result..."
+    fi
+    result=$(cat $temp_dir/res)
     if [ "${result:0:2}" != "OK" ];
     then
         echo ""
         echo -e "${RED}Error found!${NC}"
         echo -e "${BLUE}Input:${NC}"
-        cat input
+        cat $temp_dir/input
         echo -e "${BLUE}Output:${NC}"
-        cat out
+        cat $temp_dir/out
         echo -e "${BLUE}Validator result:${NC}"
-        cat res 
-        rm $1 $2 $3 out res data
+        cat $temp_dir/res 
+        cp $temp_dir/input $current_dir/input_$temp_dir_id
+        rm -rf $temp_dir
         exit 0
+    fi
+    
+    if [ "$DEBUG" = true ]; then
+        echo -e "${BLUE}[Debug]${NC} Test $((testNum+1)) passed"
     fi
 done
 echo ""
 echo -e "${BLUE}Passed $4 tests!!!${NC}"
-rm $1 $2 $3 out res data
+rm -rf $temp_dir
 exit 0
