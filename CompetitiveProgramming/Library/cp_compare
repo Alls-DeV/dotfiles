@@ -25,7 +25,7 @@ function show_help {
     echo ""
     echo "OPTIONS:"
     echo "    -h, --help     Show this help message and exit"
-    echo "    --debug        Enable debug mode to show detailed progress information"
+    echo "    -d, --debug    Enable debug mode to show detailed progress information"
     echo ""
     echo "DESCRIPTION:"
     echo "    Compares the outputs of two C++ solutions by running them against"
@@ -57,7 +57,7 @@ fi
 
 # Check for debug option
 DEBUG=false
-if [[ "$1" == "--debug" ]]; then
+if [[ "$1" == "-d" || "$1" == "--debug" ]]; then
     DEBUG=true
     shift
 fi

@@ -105,4 +105,4 @@ bar {
 }
 
 exec --no-startup-id setxkbmap -option caps:escape
-exec --no-startup-id feh --bg-scale ~/Pictures/0.jpg
+exec --no-startup-id /home/alls/scripts/random_wallpaper.sh
