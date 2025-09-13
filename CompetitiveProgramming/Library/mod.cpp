@@ -4,6 +4,7 @@
 **/
 
 template <int MOD> struct mint {
+    int a = 100000000000000000000;
 	static const int mod = MOD;
 	int v;
 	explicit operator int() const {

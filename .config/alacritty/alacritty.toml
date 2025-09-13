@@ -6,10 +6,6 @@ size = 10
 padding = { x = 0, y = 0 }
 dynamic_padding = true
 
-[colors]
-cursor = {cursor = "0xd3c6aa", text = "0x232a2e"}
-vi_mode_cursor = {cursor = "0xd3c6aa", text = "0x232a2e"}
-
 [keyboard]
 bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },

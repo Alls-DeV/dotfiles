@@ -10,12 +10,8 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "VeryLazy",
 	config = function()
-		local custom_theme = require("lualine.themes.auto")
-		custom_theme.normal.c.bg = "#181616"
-
 		require("lualine").setup({
 			options = {
-				theme = custom_theme,
 				icons_enabled = true,
 				ignore_focus = {},
 				globalstatus = false,
