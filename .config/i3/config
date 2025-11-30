@@ -1,8 +1,16 @@
+# colors
+set $white  #EEE8D5
+set $black  #00141A
+set $grey   #586E75
+set $red    #DC322F
+set $blue   #29EEDF
+
 # Basic settings
 font pango:JetBrains Mono Nerd Font Propo 11
 set $mod Mod4
+set $alt Mod1
 workspace_layout default
-bindsym $mod+Shift+s layout toggle tabbed splith
+bindsym $mod+Shift+s layout toggle tabbed split
 new_window pixel 2
 hide_edge_borders smart
 floating_modifier $mod
@@ -50,17 +58,17 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute && pkill -RTMI
 bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle && killall -USR1 i3blocks
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Application shortcuts
 bindsym $mod+Return exec alacritty
 bindsym $mod+w exec google-chrome-stable
 bindsym $mod+n exec nemo
 bindsym $mod+a exec pavucontrol
-bindsym $mod+p exec flameshot gui
+bindsym $mod+p exec QT_ENABLE_HIGHDPI_SCALING=0 flameshot gui
 bindsym $mod+c exec code
-bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "#191724" -nf "#908caa" -sb "#191724" -sf "#9ccfd8" -l 10
+bindsym $mod+d exec dmenu_run -i -fn "JetBrains Mono Nerd Font-15" -nb "$black" -nf "$grey" -sb "$black" -sf "$blue" -l 10
 bindsym $mod+b exec blueman-manager
 
 # Python as calculator
@@ -68,24 +76,19 @@ bindsym $mod+s exec alacritty --class ciao -e /usr/bin/python3
 for_window [instance="ciao"] floating enable, [floating] resize set 1200 800 , move position center
 
 # Resizing windows
-bindsym $mod+Ctrl+l resize grow width 5 px or 5 ppt
-bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
-bindsym $mod+Ctrl+h resize shrink width 5 px or 5 ppt
-bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
+bindsym $mod+$alt+l resize grow width 5 px or 5 ppt
+bindsym $mod+$alt+k resize grow height 5 px or 5 ppt
+bindsym $mod+$alt+h resize shrink width 5 px or 5 ppt
+bindsym $mod+$alt+j resize shrink height 5 px or 5 ppt
 
 # Power menu
 bindsym $mod+Escape exec ~/scripts/power.sh
 
-# colors
-set $black  #191724
-set $grey   #908caa
-set $red    #eb6f92
-set $foam   #9ccfd8
 
 # Border color settings
 #                       border_bar   back     text     direction   border_win
-client.focused          $foam        $foam    $black   $red        $foam
-client.focused_inactive $black       $black   $foam    $black      $black
+client.focused          $blue        $blue    $black   $red        $blue
+client.focused_inactive $black       $black   $blue    $black      $black
 client.unfocused        $black       $black   $grey    $black      $black
 
 # Bar Configuration
@@ -95,8 +98,9 @@ bar {
     position top
     colors {
         background $black
+        statusline $white
         #                  border   background  text
-        focused_workspace  $black   $black      $foam
+        focused_workspace  $black   $black      $blue
         inactive_workspace $black   $black      $grey
         active_workspace   $black   $black      $grey
         urgent_workspace   $red     $red        $black

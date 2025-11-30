@@ -19,7 +19,23 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-# zinit light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab
+
+# Completion styling
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -51,13 +67,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
 # Aliases
 alias ls='eza --icons --git'
 alias l='ls'
@@ -73,7 +82,7 @@ alias ...='cd ../..'
 # Competitive Programming
 alias asd='g++ -std=gnu++20 -Ofast -o a'
 alias dasd='g++ -std=gnu++20 -Ofast -DALE -o a'
-alias ddasd='g++ -std=gnu++20 -Wall -Wextra -g -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -O2 -DALE -o a'
+alias ddasd='g++ -std=gnu++20 -Wall -Wextra -Wconversion -Wfatal-errors -g -fsanitize=address,undefined -fno-sanitize-recover -O2 -DALE -o a'
 
 # Automatically do an ls after each cd, z, or zoxide
 cd ()

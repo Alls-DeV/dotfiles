@@ -1,10 +1,10 @@
 #!/bin/sh
 
 case "$(echo -e "Poweroff\nreBoot\nloGout\nlocK" | dmenu \
-    -nb "#191724" \
-    -nf "#908caa" \
-    -sb "#191724" \
-    -sf "#9ccfd8" \
+    -nb "#00141a" \
+    -nf "#586E75" \
+    -sb "#00141a" \
+    -sf "#2AA198" \
     -fn "JetBrains Mono Nerd Font-15" \
     -l 5 -i -p "Power Menu:")" in
         Poweroff) exec systemctl poweroff;;

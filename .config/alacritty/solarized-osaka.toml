@@ -1,0 +1,24 @@
+# solarized-osaka dark
+[colors.primary]
+background = '0x001419'
+foreground = '#EEE8D5'
+
+[colors.normal]
+black = '0x001014'
+red = '0xdb302d'
+green = '0x849900'
+yellow = '0xb28500'
+blue = '0x268bd3'
+magenta = '0xd23681'
+cyan = '0x29a298'
+white = '0x9eabac'
+
+[colors.bright]
+black = '0x839395'
+red = '0xdb302d'
+green = '0x849900'
+yellow = '0xb28500'
+blue = '0x268bd3'
+magenta = '0xd23681'
+cyan = '0x29a298'
+white = '0x839395'

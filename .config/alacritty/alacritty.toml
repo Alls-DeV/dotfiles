@@ -1,3 +1,5 @@
+general.import = ["~/.config/alacritty/solarized-osaka.toml"]
+
 [font]
 normal = { family = "JetBrainsMono Nerd Font Propo", style = "Regular" }
 size = 10

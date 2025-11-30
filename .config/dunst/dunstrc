@@ -45,20 +45,20 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#191724"
-    foreground = "#9ccfd8"
-    frame_color = "#9ccfd8"
+    background = "#00141A"
+    foreground = "#2AA198"
+    frame_color = "#2AA198"
     timeout = 10
 
 [urgency_normal]
-    background = "#191724"
-    foreground = "#9ccfd8"
-    frame_color = "#9ccfd8"
+    background = "#00141A"
+    foreground = "#2AA198"
+    frame_color = "#2AA198"
     timeout = 10
     override_pause_level = 30
 
 [urgency_critical]
-    background =  "#eb6f92"
-    foreground =  "#191724"
-    frame_color = "#eb6f92"
+    background =  "#B7211F"
+    foreground =  "#00141A"
+    frame_color = "#B7211F"
     timeout = 30

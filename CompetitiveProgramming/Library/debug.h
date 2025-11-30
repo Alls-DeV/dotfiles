@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define RESET "\033[0m"
 std::vector<std::string> colors = {"\033[0;31m", "\033[0;32m", "\033[0;33m", "\033[0;34m", "\033[0;35m", "\033[0;36m", "\033[0;37m"};
-int index_color = 0;
+std::size_t index_color = 0;
 void __print(int x) { std::cerr << x; }
 void __print(long x) { std::cerr << x; }
 void __print(long long x) { std::cerr << x; }
@@ -125,7 +125,7 @@ void __print(std::priority_queue<T> x)
 void _print_name(std::string names)
 {
     std::cerr << " ";
-    int index = 0;
+    std::size_t index = 0;
     std::cerr << colors[index];
     bool flag = false;
     for (int i = 0; i < (int)names.size(); i++)

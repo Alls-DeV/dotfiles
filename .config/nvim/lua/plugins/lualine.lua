@@ -1,9 +1,15 @@
+local colors = require("solarized-osaka.colors").setup({ transform = true })
+
 local diagnostic_icons = {
 	ERROR = " ",
 	WARN = " ",
 	HINT = " ",
 	INFO = " ",
 }
+
+local custom_solarized_osaka = require 'lualine.themes.solarized-osaka'
+custom_solarized_osaka.normal.a.bg = colors.cyan
+custom_solarized_osaka.inactive.a.fg = colors.cyan
 
 return {
 	"nvim-lualine/lualine.nvim",
@@ -12,6 +18,7 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
+                theme = custom_solarized_osaka,
 				icons_enabled = true,
 				ignore_focus = {},
 				globalstatus = false,
@@ -25,11 +32,9 @@ return {
 
 			sections = {
 				lualine_a = {
-					{ "filename", path = 1, separator = { right = "", left = "" } },
+					{ "filename", path = 1 },
 				},
-				lualine_b = {
-					{ "filetype", separator = { right = "", left = "" } },
-				},
+				lualine_b = {},
 				lualine_c = {
 					{
 						"diagnostics",
@@ -45,10 +50,10 @@ return {
 					"diff",
 				},
 				lualine_y = {
-					{ "branch", separator = { left = "" } },
+					{ "branch" },
 				},
 				lualine_z = {
-					{ "location", separator = { left = "", right = "" }, icon = "" },
+					{ "location", icon = "" },
 				},
 			},
 			inactive_sections = {

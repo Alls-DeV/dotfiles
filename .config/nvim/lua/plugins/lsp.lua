@@ -53,7 +53,8 @@ return {
 			end,
 		})
 
-		vim.lsp.inlay_hint.enable()
+        -- TODO: make it toggle
+		-- vim.lsp.inlay_hint.enable()
 		-- Diagnostic Config
 		-- See :help vim.diagnostic.Opts
 		vim.diagnostic.config({
@@ -95,13 +96,6 @@ return {
 		vim.keymap.set("n", "]e", function()
 			vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
 		end, opts)
-
-		-- LSP servers and clients are able to communicate to each other what features they support.
-		--  By default, Neovim doesn't support everything that is in the LSP specification.
-		--  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
-		--  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
-		local original_capabilities = vim.lsp.protocol.make_client_capabilities()
-		local capabilities = require("blink.cmp").get_lsp_capabilities(original_capabilities)
 
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
