@@ -19,23 +19,19 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
-# Completion styling
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
-zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
-zstyle ':completion:*' menu no
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-# custom fzf flags
-# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
-zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+# Colors for completion lists:
+# - use LS_COLORS for file types
+# - ma=... controls how the currently selected item is highlighted
+zstyle ':completion:*' list-colors \
+  "ma=1;37;45" \
+  "${(s.:.)LS_COLORS}"
+
+# Use a menu you can move around in, with a highlighted selection
+zstyle ':completion:*' menu select
+
+# Load complist (needed for colored lists + menu selection)
+zmodload -i zsh/complist
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -52,6 +48,9 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+# When the completion menu is active
+bindkey -M menuselect '^p' reverse-menu-complete
+bindkey -M menuselect '^n' menu-complete
 
 zle_highlight+=(paste:none)
 
@@ -77,7 +76,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ..='cd ..'
-alias ...='cd ../..'
 
 # Competitive Programming
 alias asd='g++ -std=gnu++20 -Ofast -o a'
@@ -96,9 +94,16 @@ cd ()
 
 # Shell integrations
 source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--multi --no-height --extended'
+export FZF_DEFAULT_OPTS='--multi --no-height --extended --tmux 100%'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
-# eval "$(zoxide init --cmd cd zsh)"
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+  # Print tree structure in the preview window
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'eza -T -L 1 {}'"
 
 # export NVM_DIR="$HOME/.config/nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
