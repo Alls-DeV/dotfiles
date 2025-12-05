@@ -1,0 +1,13 @@
+image=/home/alls/Pictures/Wallpapers/space.jpg
+timestr=%H:%M
+datestr=%x
+clock
+indicator
+indicator-radius=100
+indicator-thickness=7
+effect-vignette=0.5:0.5
+ring-color=073642
+key-hl-color=2AA198
+bs-hl-color=B7211F
+font=RecMonoCasual Nerd Font
+text-color=2AA198

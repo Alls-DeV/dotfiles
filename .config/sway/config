@@ -1,0 +1,150 @@
+set $white  #EEE8D5
+set $black  #00141A
+set $grey   #586E75
+set $red    #B7211F
+set $cyan   #2AA198
+
+# Basic settings
+font pango:RecMonoCasual Nerd Font 12
+set $mod Mod4
+set $alt Mod1
+workspace_layout default
+bindsym $mod+Shift+s layout toggle tabbed split
+default_border pixel 2
+hide_edge_borders smart
+floating_modifier $mod
+bindsym $mod+Shift+r reload
+bindsym $mod+q kill
+
+# Workspace
+set $ws1 "1<b>1</b>"
+set $ws2 "2<b>2</b>"
+set $ws3 "3<b>3</b>"
+set $ws4 "4<b>4</b>"
+set $ws5 "5<b>5</b>"
+set $ws6 "6<b>6</b>"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+# Window focus, movement and management
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+$alt+l resize grow width 5 px or 5 ppt
+bindsym $mod+$alt+k resize grow height 5 px or 5 ppt
+bindsym $mod+$alt+h resize shrink width 5 px or 5 ppt
+bindsym $mod+$alt+j resize shrink height 5 px or 5 ppt
+bindsym $mod+o split toggle
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f floating toggle ; [floating] resize set 1200 800 ; move position center
+
+# Audio control
+bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+# Brightness control
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+# Application shortcuts
+bindsym $mod+Return exec footclient
+bindsym $mod+w exec google-chrome-stable
+bindsym $mod+n exec nemo
+bindsym $mod+a exec pavucontrol
+bindsym $mod+p exec grim -g "$(slurp)" - | satty --filename -
+bindsym $mod+c exec code
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+b exec blueman-manager
+
+# Python as calculator
+bindsym $mod+s exec footclient --app-id random_name --window-size-pixels 800x400 /usr/bin/python3
+for_window [app_id="random_name"] floating enable, move position center
+
+# Power menu
+bindsym $mod+Escape exec ~/scripts/power_menu.sh
+
+
+# Border color settings
+#                       border_bar   back     text     direction   border_win
+client.focused          $cyan        $cyan    $black   $red        $cyan
+client.focused_inactive $black       $black   $cyan    $black      $black
+client.unfocused        $black       $black   $grey    $black      $black
+
+
+# Wallpaper
+output * bg /home/alls/Pictures/Wallpapers/space.jpg fill
+
+set $laptop eDP-1
+
+output $laptop scale 2
+output $laptop resolution 2560x1600@90Hz
+output HDMI-A-1 scale 2
+output HDMI-A-1 resolution 3840x2160@60Hz
+
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+
+# Idle configuration
+# TODO: check swaylock
+exec swayidle -w \
+         timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep swaylock
+
+
+
+# TODO: check if there are other useful things
+input type:touchpad {
+    dwt enabled
+    tap enabled
+}
+
+input type:keyboard {
+    xkb_options caps:escape
+}
+
+# Bar Configuration
+bar {
+    position top
+    strip_workspace_numbers yes
+    status_command while ~/scripts/statusbar.sh; do sleep 0.1; done
+    colors {
+        background $black
+        statusline $white
+        #                  border   background  text
+        focused_workspace  $black   $black      $cyan
+        inactive_workspace $black   $black      $grey
+        active_workspace   $black   $black      $grey
+        urgent_workspace   $red     $red        $black
+        binding_mode       $black   $black      $red
+    }
+}
+
+# Border color settings
+#                       border_bar   back     text     direction   border_win
+client.focused          $cyan        $cyan    $black   $red        $cyan
+client.focused_inactive $black       $black   $cyan    $black      $black
+client.unfocused        $black       $black   $grey    $black      $black
+
+include /etc/sway/config.d/*
+
+exec foot --server

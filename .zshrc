@@ -68,7 +68,7 @@ setopt hist_find_no_dups
 
 # Aliases
 alias ls='eza --icons --git'
-alias l='ls'
+alias l='command ls'
 alias ll='ls -l'
 alias la='ls -la'
 alias lt='ls --tree'
