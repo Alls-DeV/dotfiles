@@ -71,6 +71,7 @@ bindsym $mod+w exec google-chrome-stable
 bindsym $mod+n exec nemo
 bindsym $mod+a exec pavucontrol
 bindsym $mod+p exec grim -g "$(slurp)" - | satty --filename -
+for_window [app_id="satty"] floating disable
 bindsym $mod+c exec code
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+b exec blueman-manager
@@ -108,6 +109,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 # TODO: check swaylock
 exec swayidle -w \
          timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 900 'systemctl suspend' \
          before-sleep swaylock
 
 
@@ -148,3 +150,4 @@ client.unfocused        $black       $black   $grey    $black      $black
 include /etc/sway/config.d/*
 
 exec foot --server
+exec wl-clip-persist --clipboard regular

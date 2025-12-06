@@ -154,9 +154,17 @@ get_volume() {
     fi
 
     if [ -n "$volume" ]; then
-        printf '%s %s%%' "$icon" "$volume"
+        if [ "$mute" = "true" ] || [ "$mute" = "yes" ]; then
+            printf '<span foreground="#FFC100">%s %s%%</span>' "$icon" "$volume"
+        else
+            printf '%s %s%%' "$icon" "$volume"
+        fi
     else
-        printf '%s --' "$icon"
+        if [ "$mute" = "true" ] || [ "$mute" = "yes" ]; then
+            printf '<span foreground="#FFC100">%s --</span>' "$icon"
+        else
+            printf '%s --' "$icon"
+        fi
     fi
 }
 
@@ -191,9 +199,17 @@ get_microphone() {
     fi
 
     if [ -n "$volume" ]; then
-        printf '%s %s%%' "$icon" "$volume"
+        if [ "$mute" = "true" ] || [ "$mute" = "yes" ]; then
+            printf '<span foreground="#FFC100">%s %s%%</span>' "$icon" "$volume"
+        else
+            printf '%s %s%%' "$icon" "$volume"
+        fi
     else
-        printf '%s' "$icon"
+        if [ "$mute" = "true" ] || [ "$mute" = "yes" ]; then
+            printf '<span foreground="#FFC100">%s</span>' "$icon"
+        else
+            printf '%s' "$icon"
+        fi
     fi
 }
 
@@ -216,7 +232,7 @@ get_brightness() {
 }
 
 get_battery() {
-    local path capacity status icon
+    local path capacity status icon low_battery
 
     path=$(find /sys/class/power_supply -maxdepth 1 -name 'BAT*' | head -n1)
     if [ -z "$path" ]; then
@@ -236,10 +252,15 @@ get_battery() {
             icon="$battery_medium_icon"
         else
             icon="$battery_low_icon"
+            low_battery=1
         fi
     fi
 
-    printf '%s %s%%' "$icon" "$capacity"
+    if [ "${low_battery:-0}" -eq 1 ]; then
+        printf '<span foreground="#DC322F">%s %s%%</span>' "$icon" "$capacity"
+    else
+        printf '%s %s%%' "$icon" "$capacity"
+    fi
 }
 
 get_bluetooth() {
