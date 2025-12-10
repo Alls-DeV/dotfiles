@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
+shutdown=" Poweroff"
+reboot=" reBoot"
 lock=" locK"
 logout=" loGout"
-reboot=" reBoot"
-shutdown=" Poweroff"
  
-selected_option=$(echo "$lock
-$logout
+selected_option=$(echo "$shutdown
 $reboot
-$shutdown" | rofi -dmenu -i)
+$lock
+$logout" | rofi -dmenu -i)
 
 if [ "$selected_option" == "$lock" ]
 then
