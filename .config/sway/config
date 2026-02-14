@@ -107,8 +107,10 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # Idle configuration
 exec swayidle -w \
-         timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep swaylock
+     timeout 300 'swaymsg "output * dpms off"' \
+     resume 'swaymsg "output * dpms on"' \
+     before-sleep 'swaylock' \
+     before-sleep 'sleep 1'
 
 
 
@@ -144,6 +146,8 @@ bar {
 client.focused          $cyan        $cyan    $black   $red        $cyan
 client.focused_inactive $black       $black   $cyan    $black      $black
 client.unfocused        $black       $black   $grey    $black      $black
+
+seat * hide_cursor 8000
 
 include /etc/sway/config.d/*
 

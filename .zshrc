@@ -48,9 +48,12 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
 # When the completion menu is active
-bindkey -M menuselect '^p' reverse-menu-complete
-bindkey -M menuselect '^n' menu-complete
+bindkey -M menuselect '^h' backward-char
+bindkey -M menuselect '^j' down-line-or-history
+bindkey -M menuselect '^k' up-line-or-history
+bindkey -M menuselect '^l' forward-char
 
 zle_highlight+=(paste:none)
 
