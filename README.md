@@ -1,7 +1,15 @@
-# Arch
+# My environment setup
 
-This repo contains my dotfile configuration, allowing for a consistent computing experience across multiple machines.
-These days I primarily use GNU/Linux via the [Arch Linux distribution](https://archlinux.org).
+This repo contains my dotfile configuration. I use GNU/Linux via the [EndeavourOS distribution](https://endeavouros.com).
+
+## Installing Programs
+
+When I install the OS with EndeavourOS installation, I select no desktop environment but check the 
+
+```bash
+sudo pacman -Syu sway foot neovim brightnessctl rofi zsh dunst pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber pavucontrol blueman otf-font-awesome ttf-recursive-nerd vlc nemo wl-clipboard wl-clip-persist grim slurp satty unzip wget base-devel curl bat eza man-db git stow swayidle swaybg polkit-gnome cronie tmux
+yay google-chrome swaylock-effects-git
+```
 
 I manage the various configuration files in this repo using [GNU Stow](https://www.gnu.org/software/stow/).  This allows me to set up symlinks for all of my dotfiles using a single command:
 
@@ -9,16 +17,8 @@ I manage the various configuration files in this repo using [GNU Stow](https://w
 stow .
 ```
 
-## Inspiration
-
 The inspiration for this configuration comes from [this video](https://www.youtube.com/watch?v=y6XCebnB9gs).
 
-## Installing Programs
-
-```bash
-sudo pacman -Syu
-yay i3 xorg unzip wget base-devel curl flameshot ttf-jetbrains-mono-nerd noto-fonts-emoji lxappearance zsh eog evince vlc bat xclip brightnessctl feh neovim cronie dunst eza man-db git fastfetch dmenu stow nemo nemo-fileroller blueman alacritty google-chrome visual-studio-code-bin
-```
 
 ## Systemctl Privileges
 

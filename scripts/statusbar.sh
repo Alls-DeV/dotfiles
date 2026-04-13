@@ -22,9 +22,6 @@ battery_medium_icon="󰁽"
 battery_low_icon="󰁺"
 battery_charging_icon=""
 
-bluetooth_on_icon=""
-bluetooth_off_icon="󰂲"
-
 clock_icon=""
 calendar_icon=""
 
@@ -263,44 +260,13 @@ get_battery() {
     fi
 }
 
-get_bluetooth() {
-    # Default: assume Bluetooth is off
-    local state_icon="$bluetooth_off_icon"
-
-    # If systemd is present and bluetooth.service is NOT active, just show "off" and exit
-    if command -v systemctl >/dev/null 2>&1; then
-        if ! systemctl is-active --quiet bluetooth.service 2>/dev/null; then
-            printf '%s' "$state_icon"
-            return 0
-        fi
-    fi
-
-    # Service is active (or we can't check), so try bluetoothctl
-    if command -v bluetoothctl >/dev/null 2>&1; then
-        local powered
-        powered=$(
-            bluetoothctl show 2>/dev/null \
-            | awk -F': ' '/Powered:/{print $2; exit}' \
-            || true
-        )
-
-        if [ "$powered" = "yes" ]; then
-            state_icon="$bluetooth_on_icon"
-        fi
-    fi
-
-    printf '%s' "$state_icon"
-}
-
-
 # Build line
 network="$(get_network)"
 volume="$(get_volume)"
 microphone="$(get_microphone)"
 brightness="$(get_brightness)"
 battery="$(get_battery)"
-bluetooth="$(get_bluetooth)"
 clock="$clock_icon $(date '+%H:%M')"
 calendar="$calendar_icon $(date '+%d-%m-%Y')"
 
-echo "$network   $volume   $microphone   $brightness   $battery   $bluetooth   $clock   $calendar"
+echo "$network   $volume   $microphone   $brightness   $battery   $clock   $calendar"

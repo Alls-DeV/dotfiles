@@ -1,1 +1,0 @@
-sudo pacman -S foot neovim brightnessctl rofi zsh dunst pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber pavucontrol blueman otf-font-awesome ttf-recursive-nerd vlc swaybar nemo wl-clipboard wl-clip-persist grim slurp satty unzip wget base-devel curl bat eza man-db git stow swaylock-effects-git swaymsg swayidle swaybg polkit-gnome
