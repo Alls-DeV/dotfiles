@@ -1,4 +1,4 @@
-export PATH=$HOME/CompetitiveProgramming/Library:$HOME/.local/bin:$HOME/scripts:$PATH
+export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$HOME/CompetitiveProgramming/Library:$HOME/.local/bin:$HOME/scripts:$PATH
 
 export EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -115,3 +115,7 @@ export NVM_DIR="$HOME/.config/nvm"
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init - zsh)"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/allsdev/.local/bin:$PATH"

@@ -69,7 +69,7 @@ final_space = true
 
   [[blocks.segments]]
     style = 'plain'
-    template = '{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }} '
+    template = '{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }} {{ .Venv }}{{ end }}{{ .Full }}{{ end }} '
     foreground = 'yellow'
     background = 'transparent'
     type = 'python'

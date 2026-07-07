@@ -6,3 +6,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     export ELECTRON_OZONE_PLATFORM_HINT=wayland
     exec sway
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/allsdev/.local/bin:$PATH"

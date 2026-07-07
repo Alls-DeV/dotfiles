@@ -7,7 +7,7 @@ This repo contains my dotfile configuration. I use GNU/Linux via the [EndeavourO
 When I install the OS with EndeavourOS installation, I select no desktop environment but check the 
 
 ```bash
-sudo pacman -Syu sway foot neovim brightnessctl rofi zsh dunst pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber pavucontrol blueman otf-font-awesome ttf-recursive-nerd vlc nemo wl-clipboard wl-clip-persist grim slurp satty unzip wget base-devel curl bat eza man-db git stow swayidle swaybg polkit-gnome cronie tmux
+sudo pacman -Syu sway foot neovim brightnessctl rofi zsh dunst pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber pavucontrol blueman otf-font-awesome ttf-recursive-nerd vlc nemo wl-clipboard wl-clip-persist grim slurp satty unzip wget base-devel curl bat eza man-db git stow swayidle swaybg polkit-gnome cronie tmux xdg-desktop-portal xdg-desktop-portal-wlr
 yay google-chrome swaylock-effects-git
 ```
 
@@ -63,19 +63,16 @@ Browser extensions:
 
 - [Adblock Plus](https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb)
 - [Dark Reader](https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
-- [DeepL Translate](https://chromewebstore.google.com/detail/deepl-translate/cofdbpoegempjloogbagkncekinflcnj)
 - [Video Speed Controller](https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk)
 - [Rearrange Tabs](https://chrome.google.com/webstore/detail/rearrange-tabs/ccnnhhnmpoffieppjjkhdakcoejcpbga)
-
-## System, Icon, and Cursor Theme
-- unzip into `~/.themes` or `~/.icons` the themes downloaded from http://gnome-look.org or http://xfce-look.org and choose them from lxappearance
-- [Phinger Cursors](https://github.com/phisch/phinger-cursors)
-- [Rose-pine cursors](https://github.com/rose-pine/cursor)
+- [UnSponsored](https://chromewebstore.google.com/detail/unsponsored/pmbneaajfhcoecedlmkfkdnjemmebbcb?hl=en)
+- [Unhook](https://chromewebstore.google.com/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid?hl=en)
+- [YouTube Anti Translate](https://chromewebstore.google.com/detail/youtube-anti-translate/ndpmhjnlfkgfalaieeneneenijondgag)
 
 ## Enable 'Open in Terminal' in the file explorer
 ```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
-gsettings set org.cinnamon.desktop.default-applications.terminal exec 'alacritty'
+gsettings set org.gnome.desktop.default-applications.terminal exec 'footclient'
+gsettings set org.cinnamon.desktop.default-applications.terminal exec 'footclient'
 ```
 
 ## Huion tablet

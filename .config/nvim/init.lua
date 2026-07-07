@@ -53,6 +53,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Variable highlight faster
 vim.o.updatetime = 100
 
+vim.o.winborder = "rounded"
 
 
 -- //////////////
@@ -271,13 +272,6 @@ vim.keymap.set('n', '<C-\\>', '<cmd>TmuxNavigatePrevious<cr>', opts)
 -- lualine.nvim
 local colors = require("solarized-osaka.colors").setup({ transform = true })
 
-local diagnostic_icons = {
-	ERROR = " ",
-	WARN = " ",
-	HINT = " ",
-	INFO = " ",
-}
-
 local custom_solarized_osaka = require 'lualine.themes.solarized-osaka'
 custom_solarized_osaka.normal.a.bg = colors.cyan
 custom_solarized_osaka.inactive.a.fg = colors.cyan
@@ -302,15 +296,7 @@ require("lualine").setup({
 		},
 		lualine_b = {},
 		lualine_c = {
-			{
-				"diagnostics",
-				symbols = {
-					error = diagnostic_icons.ERROR,
-					warn = diagnostic_icons.WARN,
-					info = diagnostic_icons.INFO,
-					hint = diagnostic_icons.HINT,
-				},
-			},
+			{ "diagnostics" },
 		},
 		lualine_x = {
 			"diff",
@@ -340,3 +326,86 @@ require("lualine").setup({
 	},
 	extensions = {},
 })
+
+-- diagnostics
+vim.diagnostic.config({
+    underline = {
+        severity = {
+            vim.diagnostic.severity.WARN,
+            vim.diagnostic.severity.ERROR,
+        },
+    },
+    virtual_text = { current_line = true },
+    float = {
+        source = "if_many",
+        border = "rounded",
+    },
+})
+
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1, float = true })
+end, opts)
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1, float = true })
+end, opts)
+
+-- lsp
+vim.lsp.config('lua_ls', {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if
+        path ~= vim.fn.stdpath('config')
+        and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+      then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most
+        -- likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Tell the language server how to find Lua modules same way as Neovim
+        -- (see `:h lua-module-load`)
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME,
+        },
+      },
+    })
+  end,
+  settings = {
+    Lua = {},
+  },
+})
+vim.lsp.config('pyright', {
+  cmd = { 'pyright-langserver', '--stdio' },
+  filetypes = { 'python' },
+  root_markers = {
+    'pyproject.toml',
+    'setup.py',
+    'setup.cfg',
+    'requirements.txt',
+    '.git',
+  },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'workspace',
+      },
+    },
+  },
+})
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pyright')
